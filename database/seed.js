@@ -1,4 +1,5 @@
 const connection = require('./index.js');
+// const { Cities, Restaurants, Cuisines } = require('./dbHelpers.js')
 
 let metroList = ['Atlanta/Georgia', 'Baltimore_Area', 'Boston/New_England', 'Chicago/Illinois', 'Dallas', 'Denver/Colorado', 'Houston', 'Las_Vegas', 'Los_Angeles', 'Miami/South_Florida', 'New Orleans/Louisiana', 'New_York_Area', 'Orange_County', 'San_Francisco_Area', 'San_Diego', 'Seattle_Area']
 
@@ -33,8 +34,7 @@ const mapCities = (arr, mId) => {
 
 // Metro populating
 
-
-var metroArr = mapSingleItem(metroList);
+let metroArr = mapSingleItem(metroList);
 connection.query("INSERT INTO metros (metro) VALUES ?", [metroArr], function (err, result) {
     if (err) { console.log('err', err) };
     console.log('result', result);
@@ -42,15 +42,16 @@ connection.query("INSERT INTO metros (metro) VALUES ?", [metroArr], function (er
 
 // Cities populating
 
-var cityList = mapCities(cities, 9);
+let cityList = mapCities(cities, 9);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [cityList], function (err, result) {
     if (err) { console.log('err', err) }
     console.log(result);
 });
 
+
 // Populating Restaurants 
 
-var restaurantList = mapSingleItem(restaurantNames);
+let restaurantList = mapSingleItem(restaurantNames);
 connection.query("INSERT INTO restaurants (restaurantName) VALUES ?", [restaurantList], function (err, result) {
     if (err) { console.log('err', err) }
     console.log(result);
@@ -58,14 +59,14 @@ connection.query("INSERT INTO restaurants (restaurantName) VALUES ?", [restauran
 
 // Populating Cuisines
 
-var cuisinesList = mapSingleItem(cuisines);
+let cuisinesList = mapSingleItem(cuisines);
 connection.query("INSERT INTO cuisines (cuisineName) VALUES ?", [cuisinesList], function (err, result) {
     if (err) { console.log('err', err) }
     console.log(result);
 });
 
 // // Populating Reservations
-//     var metro = mapSingleItem(cities);
+//     let metro = mapSingleItem(cities);
 //     connection.query("INSERT INTO reservations (reservationTime, dateId, currentStatus, partyCount) VALUES ?", [city], function (err, result) {
 //     //         if (err) throw err;
 //     //         console.log(result);

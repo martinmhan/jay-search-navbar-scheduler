@@ -3,18 +3,18 @@ const mysqlConfig = require('./config.js');
 
 const connection = mysql.createConnection(mysqlConfig);
 
-const searchForCities = (metro, callback) => {
-    connection.query(`SELECT * FROM cities WHERE metroId = (SELECT id FROM metros WHERE metro = '${metro}')`, function (err, result) {
-        if (err) { callback(err) }
-        else { callback(null, result) }
-    })
-}
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('tableit', 'root', '', {
+    host: 'localhost',
+    dialect: 'mysql',
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+    },
+    operatorsAliases: false
+});
 
-const searchQuery = (query, callback) => {
-
-}
-
-// console.log(mapSingleItem(metroList))
-
-module.exports = { searchForCities };
-module.exports = connection;
+module.exports = { connection, sequelize };
+// connection.end();
