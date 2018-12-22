@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const { getCities } = require('./controller.js');
 
-router.route()
-    .get()
-    .post()
+router.route('/nav/')
+    .get(getCities)
+
+// router.route('/search/:query')
+//     .get(whatevergetfunction)
 
 
 
-exports.module = router;
+module.exports = router;
