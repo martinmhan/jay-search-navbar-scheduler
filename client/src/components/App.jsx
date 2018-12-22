@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import Nav from './Nav.jsx';
+import Search from './Search.jsx';
 
 class App extends React.Component {
     constructor(props) {
@@ -7,50 +9,32 @@ class App extends React.Component {
         this.state = {
             text: '',
             cities: [],
-            cityMatch: [],
-            cuisineMatch: [],
-            restaurantMatch: []
+            navBoo: false,
+            searchBoo: false
         }
-        this.handleClickNav = this.handleClick.bind(this);
-        this.handleInput = this.handleInput.bind(this);
+        this.handleClickNav = this.handleClickNav.bind(this);
+        this.handleClickSearch = this.handleClickSearch.bind(this);
     }
     handleClickNav() {
-        let metro = 'Los_Angeles'
-        axios.get(`/api/nav/${metro}`)
-            .then(data => this.setState({
-                cities: data.data
-            }))
-            .catch(err => console.log(err))
-    }
-
-    handleInput(e) {
         this.setState({
-            text: e.target.value
+            navBoo: !(this.state.navBoo)
         })
-        if (this.state.text.length >= 1) {
-            // let query = this.state.text
-            let searched = this.state.text;
-            axios.get(`/api/search/${searched}`)
-                .then(data => {
-                    let data = data.data;
-                    this.setState({
-                        cityMatch: data.cities,
-                        cuisineMatch: data.cuisines,
-                        restaurantMatch: data.restaurantMatch
-                    })
-                })
-                .catch(err => console.log(err))
-        }
+    }
+    handleClickSearch() {
+        this.setState({
+            searchBoo: !(this.state.searchBoo)
+        })
     }
 
     render() {
+        let navClicked = this.state.navBoo;
+        let searchClicked = this.state.searchBoo;
         return (
             <div>
-                <button onClick={this.handleClickNav} >Test</button>
-
-                <button onClick
-
-                <input onChange={this.handleInput}></input>
+                <button onClick={this.handleClickNav} >NavBRUHH</button>
+                {navClicked ? (<Nav />) : (<div></div>)}
+                <button onClick={this.handleClickSearch}>SEARCH4YOBITCH</button>
+                {searchClicked ? (<Search />) : (<div></div>)}
             </div >
         )
     }
