@@ -1,4 +1,4 @@
-const connection = require('./index.js');
+const { connection } = require('./index.js');
 const { sequelize } = require('./index.js');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -31,6 +31,7 @@ const searchForCities = (metro, callback) => {
             callback(err);
         }
         else {
+            console.log('RESULTTT', result)
             callback(null, result);
         }
     })

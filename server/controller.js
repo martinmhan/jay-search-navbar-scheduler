@@ -2,6 +2,7 @@ const { searchForCities, queryCategories } = require('../database/dbHelpers.js')
 
 const getCities = (req, res) => {
     const metro = req.params.metro;
+    console.log(metro, "METROROOO")
     searchForCities(metro, (err, data) => {
         if (err) {
             res.status(404).send(err)
@@ -11,9 +12,7 @@ const getCities = (req, res) => {
 }
 
 const getSearchResults = (req, res) => {
-    console.log('MARRRRRK');
     const searched = req.params.searched;
-    console.log('query mark 3', searched)
     queryCategories(searched, (err, data) => {
         if (err) {
             console.log('errrrrr', err)

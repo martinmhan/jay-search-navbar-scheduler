@@ -5,14 +5,14 @@ CREATE DATABASE tableit;
 USE tableit;
 
 CREATE TABLE metros (
-  id int NOT NULL UNIQUE AUTO_INCREMENT,
+  id int NOT NULL AUTO_INCREMENT,
   metro varchar(50) NOT NULL UNIQUE,
   -- ADD CONSTRAINT myUniqueConstraint UNIQUE(id, metro),
   PRIMARY KEY (id)
 );
 
 CREATE TABLE cities (
-  id int NOT NULL UNIQUE AUTO_INCREMENT,
+  id int NOT NULL AUTO_INCREMENT,
   city varchar(50) NOT NULL UNIQUE,
   metroId int NOT NULL,
   -- ADD CONSTRAINT myUniqueConstraint UNIQUE(id, city, metroId),
