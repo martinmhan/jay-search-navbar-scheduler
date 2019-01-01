@@ -17,9 +17,9 @@ class TopBar extends React.Component {
             mobile: false,
             en: false
         }
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClickTopBar = this.handleClickTopBar.bind(this);
     }
-    handleClick(e) {
+    handleClickTopBar(e) {
         let name = e.target.id;
         this.setState({
             [name]: !(this.state[name])
@@ -33,8 +33,8 @@ class TopBar extends React.Component {
         let enClicked = this.state.en;
         return (
             <div className={style.topBar}>
-                {searchClicked ? (<Search />) : (<div></div>)}
                 <div className={style.topContainerS1}>
+                    {searchClicked ? (<Search handleClickTopBar={this.handleClickTopBar} />) : (<div></div>)}
                     <div>
                         {mobileClicked ? <MobileDrop /> : <div></div>}
                     </div>
@@ -43,7 +43,7 @@ class TopBar extends React.Component {
                             <a href className={style.smallLinks}>For Restauranteurs</a>
                         </div>
                         <div className={style.topContainerS1RightS2}>
-                            <a href id="mobile" onClick={this.handleClick} className={style.smallLinks + ' ' + style.mobileOutsideComponents}>Mobile</a>
+                            <a href id="mobile" onClick={this.handleClickTopBar} className={style.smallLinks + ' ' + style.mobileOutsideComponents}>Mobile</a>
                             <i className={"material-icons" + ' ' + style.mobileOutsideComponents}>keyboard_arrow_down</i>
                         </div>
                         <div className={style.topContainerS1RightS3}>
@@ -51,7 +51,7 @@ class TopBar extends React.Component {
                         </div>
                         <div className={style.topContainerS1RightS4}>
                             <i className={"material-icons" + ' ' + style.outsideEnComponents}>language</i>
-                            <a href id="en" onClick={this.handleClick} className={style.smallLinks + ' ' + style.outsideEnComponents}>EN</a>
+                            <a href id="en" onClick={this.handleClickTopBar} className={style.smallLinks + ' ' + style.outsideEnComponents}>EN</a>
                             {enClicked ? <EnDrop /> : <div></div>}
                             <i className={"material-icons" + ' ' + style.outsideEnComponents}>keyboard_arrow_down</i>
                         </div>
@@ -64,7 +64,7 @@ class TopBar extends React.Component {
                     <div className={style.topContainerS2S1}>
                         <img className={style.openTableLogo} src={"https://s3-us-west-1.amazonaws.com/table-it/otlogoreg.png"} />
                     </div>
-                    <button className={style.topContainerS2S2} id="locationNav" onClick={this.handleClick}>
+                    <button className={style.topContainerS2S2} id="locationNav" onClick={this.handleClickTopBar}>
                         <div id="locationNav" className={style.locationNav}>
                             <i id="locationNav" className={"material-icons" + ' ' + style.locationNavHeaderIcon}>location_on</i>
                             <div id="locationNav" className={style.locationNavHeader + ' ' + style.smallLinks}>Los Angeles</div>
@@ -74,14 +74,10 @@ class TopBar extends React.Component {
                         </div>
                     </button>
                     <div className={style.topContainerS2S3}>
-                        <div className={style.signUpButtonContainer}>
+                        <div className={style.S2S3buttonContainer}>
                             <button className={style.signUpButton}>Sign Up</button>
-                        </div>
-                        <div className={style.signInButtonContainer}>
                             <a href className={style.signInButton}>Sign In</a>
-                        </div>
-                        <div className={style.searchContainer}>
-                            <i id="searchButton" onClick={this.handleClick} className={"material-icons" + ' ' + style.locationNavHeaderIcon}>search</i>
+                            <i id="searchButton" onClick={this.handleClickTopBar} className={"material-icons" + ' ' + style.locationNavHeaderIcon + ' ' + style.searchHeaderIcon}>search</i>
                         </div>
                     </div>
                 </div>

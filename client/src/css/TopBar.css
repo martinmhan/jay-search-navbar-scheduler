@@ -4,12 +4,14 @@
 }
 .topContainerS1{
     /* padding-left: 2.25rem; */
-    height: 25%;
+    height: 30px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     background-color: #f7f7f7;
     font-size: 13px;
+    position: relative;
 }
 .topContainerS1Right{
     color: #999;
@@ -121,6 +123,7 @@
     border-color: #f7f7f7;
     border-width: thin;
     background-color: white;
+    position: relative;
 }
 .topContainerS2S1{
     height: 100%;
@@ -158,28 +161,22 @@
 }
 .topContainerS2S3{
     flex: 3.5;
-    display: flex;
     height: 100%;
     width: 100%;
-    flex-direction: row;
-    /* justify-content: flex-end; */
+    /* flex-direction: row; */
+    display: flex;
+    justify-content: flex-end;
     background-color: white;
 }
-.signUpButtonContainer{
-    flex: 1;
-    margin: auto;
+.S2S3buttonContainer{
+    /* float: right; */
+    width: 40%;
+    display: flex;
 }
-.signInButtonContainer{
-    flex: 1;
-    margin: auto;
-}
-.searchContainer{
-    /* max-width: 80px; */
-    flex: 1;
-    margin: auto;
-}
+
 .signUpButton{
     /* padding: 0 1rem; */
+    margin: auto;
     line-height: 2rem;
     font-size: 13px;
     /* margin: .5rem 0 0; */
@@ -188,11 +185,15 @@
     color: #fff;
 }
 .signInButton{
+    margin: auto;
     /* line-height: 3.375rem; */
     padding: 0 1rem;
     font-size: 15px;
     color: #333;
     background-color: white;
+}
+.searchHeaderIcon{
+    margin: auto;
 }
 /* .search{
 
@@ -204,6 +205,7 @@
     border: solid;
     border-color: #f7f7f7;
     border-width: thin;
+    background-color: white;
 }
 .topContainerS3SContainer{
     float: left;

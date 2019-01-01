@@ -97,6 +97,7 @@ class DatePicker extends React.Component {
     }
 
     onDateClick(day) {
+        this.props.handleDaySelection(day);
         this.setState({
             selectedDate: day
         });

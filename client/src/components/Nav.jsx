@@ -6,7 +6,7 @@ class Nav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cities: [],
+            cities: ['Alameda', 'Alhambra', 'Altadena', 'Anza', 'Arcadia', 'Bakersfield', 'Bellflower', 'Belmont', 'Big Sur', 'Calabasas', 'Canoga Park', 'Capistrano Beach', 'Carson', 'Cerritos', 'Commerse', 'Compton', 'Costa Mesa', 'Cupertino', 'Dana Point', 'Diamond Bar', 'Downey', 'Encino', 'Fairfax', 'Fremont', 'Fullerton', 'Gilroy', 'Glendora', 'Hawthorne', 'Hollywood', 'Humbolt', 'Irvine', 'Joshua Tree', 'La Canada', 'Laguna Beach', 'Lake Forest', 'Lake Tahoe', 'Malibu', 'Mendocino', 'Napa', 'Newport', 'Newport Beach', 'Oakland', 'Oxnard', 'Orange', 'Ojai', 'Palm Springs', 'Palo Alto', 'Pasadena', 'Playa del Rey', 'Pomona', 'Ramona', 'Rancho Dominguez', 'Redondo Beach', 'Rosemead', 'San Bruno', 'San Diego', 'Santa Fe Springs', 'Santa Monica', 'South Pasadena', 'Temecula', 'Topanga', 'Torrance', 'Tustin', 'Universal City', 'Van Nuys', 'Venice', 'Ventura', 'West Covina', 'West Hollywood', 'Westminister', 'Whittier', 'Woodland Hills', 'Yorba Linda', 'Yucca Valley'],
             metros: ['Atlanta/Georgia', 'Boston/New_England', 'Chicago/Illinois', 'Dallas', 'Denver/Colorado', 'Houston', 'Las_Vegas', 'Los_Angeles', 'Miami/South_Florida', 'New Orleans/Louisiana', 'New_York_Area', 'Orange_County', 'San_Francisco_Area', 'San_Diego', 'Seattle_Area'],
             currentMetro: 'Los_Angeles'
         }
@@ -49,16 +49,14 @@ class Nav extends React.Component {
                 </div>
                 <div className={style.midLocationNav}>
                     <div className={style.leftMidLocationNav}>
-                        <ul className={style.regionList}>
-                            <div>
-                                {this.state.metros.map(metro => <div className={style.singleRegionDiv}><a href onClick={this.handleSelection}> {metro} </a></div>)}
-                            </div>
-                        </ul>
+                        <div className={style.regionCityList}>
+                            {this.state.metros.map(metro => <div className={style.singleRegionCityDiv}><a href onClick={this.handleSelection}> {metro} </a></div>)}
+                        </div>
                     </div>
                     <div className={style.rightMidLocationNav}>
-                        <ul className={style.cityList}>
-                            {this.state.cities.map(city => <div className={style.singleCityDiv}><a href> {city.city} </a></div>)}
-                        </ul>
+                        <div className={style.regionCityList}>
+                            {this.state.cities.map(city => <div className={style.singleRegionCityDiv}><a href> {city.city} </a></div>)}
+                        </div>
                     </div>
                 </div>
                 <div className={style.bottomLocationNav}>

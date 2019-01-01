@@ -128,16 +128,16 @@ padding: 0.5em 0;
 border-bottom: 1px solid var(--border-color);
 }
 
-.calendar .header .icon {
+/* .calendar .header .icon {
 cursor: pointer;
 transition: .15s ease-out;
-}
+} */
 
-.calendar .header .icon:hover {
+/* .calendar .header .icon:hover {
 transform: scale(1.75);
 transition: .25s ease-out;
 color: var(--main-color);
-}
+} */
 
 .calendar .header .icon:first-of-type {
 margin-left: 1em;
@@ -165,17 +165,17 @@ cursor: pointer;
 background: var(--neutral-color);
 transition: 0.25s ease-out;
 }
-
+/* 
 .calendar .body .cell:hover {
 background: var(--bg-color);
 transition: 0.5s ease-out;
-}
+} */
 
-.calendar .body .selected {
+/* .calendar .body .selected {
 border-left: 5px solid transparent;
 border-image: linear-gradient(45deg, #1a8fff 0%,#53cbf1 40%);
 border-image-slice: 1;
-}
+} */
 
 .calendar .body .row {
 border-bottom: 1px solid var(--border-color);
