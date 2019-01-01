@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import RegionList from './RegionList.jsx';
+import style from '../css/Nav.css';
 
 class Nav extends React.Component {
     constructor(props) {
@@ -18,19 +18,20 @@ class Nav extends React.Component {
     }
     handleSelection(e) {
         let selectedMetro = e.target.innerHTML;
+        selectedMetro = selectedMetro.slice(1, selectedMetro.length);
+        let context = this;
         this.setState({
             currentMetro: selectedMetro
+        }, () => {
+            context.getCities();
         })
-        //cant do promises here so what should i do ?
-        console.log("METRO BEFORE", this.state.currentMetro)
-        this.getCities();
     }
     getCities() {
         let metro = this.state.currentMetro;
-        console.log("METROOO", metro)
+        // console.log("METROOO", metro)
         axios.get(`/api/nav/${metro}`)
             .then(data => {
-                console.log('DATATTTA', data)
+                // console.log('DATATTTA', data)
                 let result = data.data;
                 this.setState({
                     cities: result
@@ -41,24 +42,28 @@ class Nav extends React.Component {
 
     render() {
         return (
-            <div id="wrapper">
-                <div id="top-nav">
-                    Metro     Region
-            </div>
-                <div id="left-nav">
-                    <ul>
-                        {this.state.metros.map(metro => <li><a href onClick={this.handleSelection} > {metro} </a></li>)}
-                    </ul>
+            <div className={style.locationContainer}>
+                <div className={style.topLocationNav}>
+                    <div className={style.locationNavText}>Metro</div>
+                    <div className={style.locationNavText}>Region</div>
                 </div>
-                <div id="right-nav">
-                    <ul>
-                        {this.state.cities.map(city => <li><a href > {city.city} </a></li>)}
-                        {/* <RegionList /> */}
-                    </ul>
-                </div>
-                <div id="bottom-nav">
-                    Full List of Metros
+                <div className={style.midLocationNav}>
+                    <div className={style.leftMidLocationNav}>
+                        <ul className={style.regionList}>
+                            <div>
+                                {this.state.metros.map(metro => <div className={style.singleRegionDiv}><a href onClick={this.handleSelection}> {metro} </a></div>)}
+                            </div>
+                        </ul>
                     </div>
+                    <div className={style.rightMidLocationNav}>
+                        <ul className={style.cityList}>
+                            {this.state.cities.map(city => <div className={style.singleCityDiv}><a href> {city.city} </a></div>)}
+                        </ul>
+                    </div>
+                </div>
+                <div className={style.bottomLocationNav}>
+                    <div className={style.smallText}>Full List of Metros</div>
+                </div>
             </div>
         )
     }

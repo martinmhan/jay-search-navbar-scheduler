@@ -1,0 +1,231 @@
+.containerSticky{
+    border: solid;
+    max-width: 992px;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: orange;
+    height: 70%;
+    position: relative;
+}
+.containerContent{
+    height: 80%;
+    border: solid;
+    border-color: red;
+    max-width: 992px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    /* margin: auto; */
+}
+.containerStickyComponents{
+    /* position: -webkit-sticky;  */
+    height: 100%;
+    max-width: 992px;
+    border: solid;
+    border-color: blue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    margin: auto; 
+}
+.content{
+    position: sticky;
+    top: 50px;
+    height: 90%;
+}
+.testDummyText{
+    font-size: 150px;
+    color: red;
+}
+.testDummyPara{
+    font-size: 45px;
+    color: green;
+}
+.appMovingNavBarContainer{
+    flex-grow: 1; 
+    position: sticky;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    /* check this flex grow*/
+    max-width: 640px;
+    width: 640px;
+    box-sizing: border-box;
+    margin: 0 2rem 0 0; 
+    border: solid;
+    border-color: black;
+}
+.appMovingNavBar{
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-grow: 2;
+    float: left;
+    border: solid;
+    border-color: black;
+}
+.appMovingNavBarList{
+    padding: 0;
+}
+.appMovingNavBarList li{
+    list-style: none;
+    display: inline;
+    font-size: 14px;
+    font-weight: 500;
+}
+.appMovingNavBarListHeader{
+    padding: 14px .5rem;
+    flex-direction: row;
+}
+.appMovingNavBarListHeader:hover{
+    padding: 14px .5rem;
+    flex-direction: row;
+    color:#F38A8A;
+    border-bottom:3px solid #F38A8A;
+}
+
+.active{
+    color:#F38A8A;
+    border-bottom:3px solid #F38A8A;
+}
+/* .navBarText{
+    font-size: 14px;
+    font-weight: 500;
+}   */
+
+.reservationCal{
+    position: absolute;
+    left: 0px;
+    top: 200px;
+    z-index: 3;
+}
+.appReservationContainer{
+    position: sticky;
+    top: 0;
+    width: 320px;
+    min-height: 400px;
+    border: solid;
+    border-color: pink;
+    display: flex;
+    flex-direction: column;
+    /* flex-flow: wrap; */
+}
+.appReservation{
+    height: 306px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    border-color: green;
+    flex-flow: wrap;
+    flex-wrap: wrap;
+    position: relative;
+}
+.appReservationTop{
+    height: 48px;
+    flex-basis: 100%;
+    display: flex;
+    border: solid;
+    border-width: thin;
+    border-color: black;
+}
+.appReservationHeaderTop{ 
+    font-size: 1.3rem;
+    margin: auto;
+    font-weight: 700;
+}
+.appReservationPartySize{
+    height: 65px;
+    flex-basis: 100%;
+    display: flex;
+    border: solid;
+    border-color: black;
+}
+.appReservationHeader{
+    margin: auto;
+    font-size: .875rem;
+    font-weight: 500;
+}
+.partyCounter{
+    margin: auto;
+}
+/* .selectPartyCount{
+
+} */
+/* .optionValue{
+    
+} */
+.appReservationTimeAndDate{
+    /* display: inline-block; */
+    height: 65px;
+    display: flex;
+    border: solid;
+    border-color: black;
+    flex-basis: 100%;
+    flex-direction: row;
+}
+.appReservationButton{
+    background-color: white;
+    width: 100%;
+}
+.appReservationDate{
+    flex-basis: 50%;
+    border: solid;
+    border-color: black;
+}
+.appReserationTime{
+    flex-basis: 50%;
+    border: solid;
+    border-color: black;
+}   
+/* .timePicker{
+
+} */
+/* .selectTime{
+
+} */
+
+.appReservationButtonContainer{
+    flex-grow: 2px;
+    height: 60px;
+    max-height: 130px;
+    flex-basis: 100%;
+    display: flex;
+    border: solid;
+    border-color: black;
+}
+.appReservationButton{
+    margin: auto;
+}
+.appReservationBookingContainer{
+    flex-grow: 1px;
+    height: 48px;
+    max-height: 75px;
+    border: solid;
+    border-color: red;
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: row;
+    justify-content: start;
+}
+.appReservationBookingLogo{
+    flex: 1;
+}
+.appReservationBookingText{
+    flex: 4
+}
+.appReservationSaveButtonContainer{
+    border: solid;
+    border-color: black;
+    min-height: 90px;
+    display: flex;
+}
+.appReservationSaveButton{
+    margin: auto;
+} 
+
+

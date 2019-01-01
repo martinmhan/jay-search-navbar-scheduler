@@ -1,0 +1,241 @@
+
+.topBar{
+    height: 20vh;
+}
+.topContainerS1{
+    /* padding-left: 2.25rem; */
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: #f7f7f7;
+    font-size: 13px;
+}
+.topContainerS1Right{
+    color: #999;
+    font-size: 12px;
+    padding: 0 1rem;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 35%;
+    padding: 0 1rem;
+}
+.topContainerS1RightS1{
+    flex: auto;
+    margin: auto;
+    max-width: 116px;
+}
+.topContainerS1RightS2{
+    flex: auto;
+    margin: auto;
+    display: flex; 
+    max-width: 70px;
+}
+.mobileContainer{
+    width: 146px;
+    height: 167px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+/* outside mobilecomponets on topheader */
+.mobileOutsideComponents{
+    flex: 1;
+    margin: auto;
+    flex: auto;
+}
+/* inside mobile component not in topbar */
+.mobileComponents{ 
+    flex: 1;
+    background-color: white;
+}
+.mobileComponents:hover{
+    flex: 1;
+    background-color: #f7f7f7;
+}
+/* .materialIcons{
+
+} */
+.enContainer{
+    height: 270px;
+    width: 146px;
+    display: flex;
+    flex-direction: column;
+}
+.enComponents{
+    flex: 1;
+    background-color: white; 
+}
+.outsideEnComponents{
+    flex: 1;
+    margin: auto;
+    flex: auto;
+}
+.enComponents:hover{
+    background-color: #f1f2f4;
+    border-left: 3px solid transparent; 
+    border-color: #237b98;
+    color: #237b98!important;
+}
+.enComponentsSelected{
+    border-left: 3px solid transparent; 
+    border-color: #237b98;
+    color: #237b98!important;
+}
+.topContainerS1RightS3{
+    flex: auto; 
+    margin: auto;
+    max-width: 59px;
+}
+.topContainerS1RightS4{
+    flex: auto; 
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    max-width: 74px;
+}
+.topContainerS1RightS4Logo{
+    flex: 1;
+}
+.smallLinks{
+    color: #717171;
+}
+.smallText{
+    color: #717171;
+}
+.smallLinks:hover{
+    color: black;
+}
+/* .miniDropDown{
+    text-align: center;
+} */
+.topContainerS2{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    border-color: #f7f7f7;
+    border-width: thin;
+    background-color: white;
+}
+.topContainerS2S1{
+    height: 100%;
+    flex: 1.3;
+}
+.openTableLogo{
+    max-width:100%;
+    max-height:100%;
+    float: right;
+}
+.topContainerS2S2{
+    border: solid;
+    border-color: #f7f7f7;
+    border-width: 0px thin 0px;
+    display: flex;
+    flex: 1;
+    flex-basis: 28%;
+}
+.locationNav{
+    /* margin: auto; */
+    display: flex;
+    flex-direction: row; 
+    font-weight: 300;
+    font-size: 16px;
+}
+.locationNavHeader{
+    margin: auto;
+    flex: auto;
+    color: #333;
+} 
+.locationNavHeaderIcon{
+    color:  #D3D3D3;
+    margin: auto;
+    flex: auto;
+}
+.topContainerS2S3{
+    flex: 3.5;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    /* justify-content: flex-end; */
+    background-color: white;
+}
+.signUpButtonContainer{
+    flex: 1;
+    margin: auto;
+}
+.signInButtonContainer{
+    flex: 1;
+    margin: auto;
+}
+.searchContainer{
+    /* max-width: 80px; */
+    flex: 1;
+    margin: auto;
+}
+.signUpButton{
+    /* padding: 0 1rem; */
+    line-height: 2rem;
+    font-size: 13px;
+    /* margin: .5rem 0 0; */
+    background-color: #237b98;
+    border-color: #1c627a;
+    color: #fff;
+}
+.signInButton{
+    /* line-height: 3.375rem; */
+    padding: 0 1rem;
+    font-size: 15px;
+    color: #333;
+    background-color: white;
+}
+/* .search{
+
+}  */
+
+.topContainerS3{
+    height: 25%;
+    font-size: .75rem;
+    border: solid;
+    border-color: #f7f7f7;
+    border-width: thin;
+}
+.topContainerS3SContainer{
+    float: left;
+    display: flex;
+}
+.topContainerS3S1{
+    flex: 1 1 auto;
+    margin: 0.45rem 1rem 0 0.35rem;
+}
+.topContainerS3S2{
+    flex: 1 1 auto;
+    margin: 0.45rem 1rem 0 0.35rem;
+}
+.topContainerS3S3{
+    flex: 1 1 auto;
+    margin: 0.45rem 1rem 0 0.35rem;
+}
+.topContainerS3S4{
+    flex: 1 1 auto;
+    margin: 0.45rem 1rem 0 0.35rem;
+}
+.topContainerS3S5{
+    flex: 1 1 auto;
+    margin: 0.45rem 1rem 0 0.35rem;
+}
+
+.topContainerS4{
+    height: 300px;
+}
+.appHeaderPhoto{
+    height: 100%;
+    border: solid;
+    border-color: black;
+    border-width: thin;
+} 

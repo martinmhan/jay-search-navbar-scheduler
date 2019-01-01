@@ -1,0 +1,80 @@
+.locationContainer{
+    display: flex;
+    font-size: 16px;
+    max-height: 646px;
+    border:solid;
+    border-color:  #333;
+    border-width: thin;
+    flex-direction: column;
+
+}
+.topLocationNav{
+    height: 11%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border:solid;
+    border-color:  #333;
+    border-width: thin;
+}
+.locationNavText{
+    width: 50%;
+    margin: auto;
+}
+.midLocationNav{
+    height: 78%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border:solid;
+    border-color:  #333;
+    border-width: thin;
+}
+.leftMidLocationNav{
+    width: 50%;
+    height: 100%;
+    border:solid;
+    border-color:  #333;
+    border-width: thin;
+}
+.rightMidLocationNav{
+    width: 50%;
+    height: 100%;
+    border:solid;
+    border-color:  #333;
+    border-width: thin;
+}
+.bottomLocationNav{
+    width: 100%;
+    height: 11%;
+    border:solid;
+    border-color:  #333;
+    border-width: thin;
+}
+/* .smallText{
+    
+} */
+.regionList{
+    overflow: scroll;
+    padding: 0;
+    border:solid;
+    border-color:  #333;
+    border-width: thin;
+}
+.singleRegionDiv{
+    width: 315px;
+    height: 40px;
+    background: white;
+}
+.cityList{
+    overflow: scroll;
+    padding: 0;
+    border:solid;
+    border-color:  #333;
+    border-width: thin;
+}
+.singleCityDiv{
+    width: 315px;
+    height: 40px;
+    background: white;
+}
