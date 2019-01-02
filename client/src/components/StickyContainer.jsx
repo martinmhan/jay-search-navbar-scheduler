@@ -3,6 +3,7 @@ import style from '../css/StickyContainer.css';
 import DatePickerReservation from './DatePickerReservation.jsx';
 import * as Scroll from 'react-scroll';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { isTuesday } from 'date-fns';
 
 
 class StickyContainer extends React.Component { // Hover buggy go back and check 
@@ -15,11 +16,16 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
             specials: false,
             reviews: false,
             twitter: false,
-            reservationCal: false
+            reservationCal: false,
+            clickedOnDate: "Tue, 2/19",
+            selectedPartyCount: "0 person",
+            selectedTime: "12:00 PM"
         }
+        this.handleClickedOnDate = this.handleClickedOnDate.bind(this);
         this.handleSetActive = this.handleSetActive.bind(this);
         this.handleSetInactive = this.handleSetInactive.bind(this);
         this.reservationButtonHandler = this.reservationButtonHandler.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
     }
     componentDidMount() {
         Events.scrollEvent.register('begin', function (to, element) {
@@ -45,10 +51,22 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
             [to]: !this.state[to]
         })
     }
-
+    handleClickedOnDate(date) {
+        console.log(date, "DATE")
+        this.setState({
+            clickedOnDate: date
+        })
+    }
     reservationButtonHandler() {
         this.setState({
             reservationCal: !this.state.reservationCal
+        })
+    }
+    handleSelect(e) {
+        let value = e.target.value;
+        let name = e.target.id;
+        this.setState({
+            [name]: value
         })
     }
 
@@ -112,36 +130,43 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
                     <div className={style.appReservationContainer}>
                         <div className={style.appReservation}>
                             <div className={style.reservationCal}>
-                                {this.state.reservationCal === true ? <DatePickerReservation /> : <div></div>}
+                                {this.state.reservationCal === true ? <DatePickerReservation handleClickedOnDate={this.handleClickedOnDate} /> : <div></div>}
                             </div>
                             <div className={style.appReservationTop}>
                                 <h3 className={style.appReservationHeaderTop}>Make Reservation</h3>
                             </div>
                             <div className={style.appReservationPartySize}>
-                                <h4 className={style.appReservationHeader}>Party Size</h4>
+
+                                <div class={style.customPartyCounter}>
+                                    <div className={style.appReservationHeader + ' ' + style.partySizeHeader}>Party Size</div>
+                                    <div className={style.partyCounterInput}>
+                                        <div className={style.currentPartyCounter}>{this.state.selectedPartyCount}</div>
+                                        <i className={"material-icons" + ' ' + style.arrowDownLogo}>keyboard_arrow_down</i>
+                                    </div>
+                                </div>
                                 <div className={style.partyCounter}>
-                                    <select className="selectPartyCount">
-                                        <option className={style.optionValue} value="1">1 person</option>
-                                        <option className={style.optionValue} value="2">2 person</option>
-                                        <option className={style.optionValue} value="3">3 person</option>
-                                        <option className={style.optionValue} value="4">4 person</option>
-                                        <option className={style.optionValue} value="5">5 person</option>
-                                        <option className={style.optionValue} value="6">6 person</option>
-                                        <option className={style.optionValue} value="7">7 person</option>
-                                        <option className={style.optionValue} value="8">8 person</option>
-                                        <option className={style.optionValue} value="9">9 person</option>
-                                        <option className={style.optionValue} value="10">10 person</option>
-                                        <option className={style.optionValue} value="11">11 person</option>
-                                        <option className={style.optionValue} value="12">12 person</option>
-                                        <option className={style.optionValue} value="13">13 person</option>
-                                        <option className={style.optionValue} value="14">14 person</option>
-                                        <option className={style.optionValue} value="15">15 person</option>
-                                        <option className={style.optionValue} value="16">16 person</option>
-                                        <option className={style.optionValue} value="17">17 person</option>
-                                        <option className={style.optionValue} value="18">18 person</option>
-                                        <option className={style.optionValue} value="19">19 person</option>
-                                        <option className={style.optionValue} value="20">20 person</option>
-                                        <option className={style.optionValue} value="21">Larger party</option>
+                                    <select id="selectedPartyCount" onChange={this.handleSelect}>
+                                        <option className={style.optionValue} value="1 person">1 person</option>
+                                        <option className={style.optionValue} value="2 person">2 person</option>
+                                        <option className={style.optionValue} value="3 person">3 person</option>
+                                        <option className={style.optionValue} value="4 person">4 person</option>
+                                        <option className={style.optionValue} value="5 person">5 person</option>
+                                        <option className={style.optionValue} value="6 person">6 person</option>
+                                        <option className={style.optionValue} value="7 person">7 person</option>
+                                        <option className={style.optionValue} value="8 person">8 person</option>
+                                        <option className={style.optionValue} value="9 person">9 person</option>
+                                        <option className={style.optionValue} value="10 person">10 person</option>
+                                        <option className={style.optionValue} value="11 person">11 person</option>
+                                        <option className={style.optionValue} value="12 person">12 person</option>
+                                        <option className={style.optionValue} value="13 person">13 person</option>
+                                        <option className={style.optionValue} value="14 person">14 person</option>
+                                        <option className={style.optionValue} value="15 person">15 person</option>
+                                        <option className={style.optionValue} value="16 person">16 person</option>
+                                        <option className={style.optionValue} value="17 person">17 person</option>
+                                        <option className={style.optionValue} value="18 person">18 person</option>
+                                        <option className={style.optionValue} value="19 person">19 person</option>
+                                        <option className={style.optionValue} value="20 person">20 person</option>
+                                        <option className={style.optionValue} value="Larger Party">Larger Party</option>
                                     </select>
                                 </div>
                             </div>
@@ -149,78 +174,87 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
                             <div className={style.appReservationTimeAndDate}>
                                 <div className={style.appReservationDate}>
                                     <h4 className={style.appReservationHeader}>Date</h4>
-                                    <a href className={style.appReservationButton} onClick={this.reservationButtonHandler}>ReservationButton</a>
-                                </div>
-                                <div className={style.appReservationTime}>
-                                    <h4 className={style.appReservationHeader}>Time</h4>
-                                    <div className={style.timePicker}>
-                                        <select className="selectTime" aria-label="time">
-                                            <option className={style.optionValue} value="00:00">12:00 AM</option>
-                                            <option className={style.optionValue} value="00:30">12:30 AM</option>
-                                            <option className={style.optionValue} value="01:00">1:00 AM</option>
-                                            <option className={style.optionValue} value="01:30">1:30 AM</option>
-                                            <option className={style.optionValue} value="02:00">2:00 AM</option>
-                                            <option className={style.optionValue} value="02:30">2:30 AM</option>
-                                            <option className={style.optionValue} value="03:00">3:00 AM</option>
-                                            <option className={style.optionValue} value="03:30">3:30 AM</option>
-                                            <option className={style.optionValue} value="04:00">4:00 AM</option>
-                                            <option className={style.optionValue} value="04:30">4:30 AM</option>
-                                            <option className={style.optionValue} value="05:00">5:00 AM</option>
-                                            <option className={style.optionValue} value="05:30">5:30 AM</option>
-                                            <option className={style.optionValue} value="06:00">6:00 AM</option>
-                                            <option className={style.optionValue} value="06:30">6:30 AM</option>
-                                            <option className={style.optionValue} value="07:00">7:00 AM</option>
-                                            <option className={style.optionValue} value="07:30">7:30 AM</option>
-                                            <option className={style.optionValue} value="08:00">8:00 AM</option>
-                                            <option className={style.optionValue} value="08:30">8:30 AM</option>
-                                            <option className={style.optionValue} value="09:00">9:00 AM</option>
-                                            <option className={style.optionValue} value="09:30">9:30 AM</option>
-                                            <option className={style.optionValue} value="10:00">10:00 AM</option>
-                                            <option className={style.optionValue} value="10:30">10:30 AM</option>
-                                            <option className={style.optionValue} value="11:00">11:00 AM</option>
-                                            <option className={style.optionValue} value="11:30">11:30 AM</option>
-                                            <option className={style.optionValue} value="12:00">12:00 PM</option>
-                                            <option className={style.optionValue} value="12:30">12:30 PM</option>
-                                            <option className={style.optionValue} value="13:00">1:00 PM</option>
-                                            <option className={style.optionValue} value="13:30">1:30 PM</option>
-                                            <option className={style.optionValue} value="14:00">2:00 PM</option>
-                                            <option className={style.optionValue} value="14:30">2:30 PM</option>
-                                            <option className={style.optionValue} value="15:00">3:00 PM</option>
-                                            <option className={style.optionValue} value="15:30">3:30 PM</option>
-                                            <option className={style.optionValue} value="16:00">4:00 PM</option>
-                                            <option className={style.optionValue} value="16:30">4:30 PM</option>
-                                            <option className={style.optionValue} value="17:00">5:00 PM</option>
-                                            <option className={style.optionValue} value="17:30">5:30 PM</option>
-                                            <option className={style.optionValue} value="18:00">6:00 PM</option>
-                                            <option className={style.optionValue} value="18:30">6:30 PM</option>
-                                            <option className={style.optionValue} value="19:00">7:00 PM</option>
-                                            <option className={style.optionValue} value="19:30">7:30 PM</option>
-                                            <option className={style.optionValue} value="20:00">8:00 PM</option>
-                                            <option className={style.optionValue} value="20:30">8:30 PM</option>
-                                            <option className={style.optionValue} value="21:00">9:00 PM</option>
-                                            <option className={style.optionValue} value="21:30">9:30 PM</option>
-                                            <option className={style.optionValue} value="22:00">10:00 PM</option>
-                                            <option className={style.optionValue} value="22:30">10:30 PM</option>
-                                            <option className={style.optionValue} value="23:00">11:00 PM</option>
-                                            <option className={style.optionValue} value="23:30">11:30 PM</option>
-                                        </select>
+                                    <div className={style.reservationDatePickerInput} onClick={this.reservationButtonHandler}>
+                                        <a href className={style.appDatePickerButton}>{this.state.clickedOnDate}</a>
+                                        <i className={"material-icons" + ' ' + style.arrowDownLogo}>keyboard_arrow_down</i>
                                     </div>
                                 </div>
+
+                                <div className={style.timePicker}>
+                                    <div class={style.customSelectTime}>
+                                        <div className={style.appReservationHeader + ' ' + style.timePickerHeader}>Time</div>
+                                        <div className={style.timePickerInput}>
+                                            <div className={style.currentSelectTime}>{this.state.selectedTime}</div>
+                                            <i className={"material-icons" + ' ' + style.arrowDownLogo}>keyboard_arrow_down</i>
+                                        </div>
+                                    </div>
+                                    <select id="selectedTime" onChange={this.handleSelect}>
+                                        <option className={style.pickerText} value="12:00 AM">12:00 AM</option>
+                                        <option className={style.pickerText} value="02:30 AM">12:30 AM</option>
+                                        <option className={style.pickerText} value="1:00 AM">1:00 AM</option>
+                                        <option className={style.pickerText} value="1:30 AM">1:30 AM</option>
+                                        <option className={style.pickerText} value="2:00 AM">2:00 AM</option>
+                                        <option className={style.pickerText} value="2:30 AM">2:30 AM</option>
+                                        <option className={style.pickerText} value="3:00 AM">3:00 AM</option>
+                                        <option className={style.pickerText} value="3:30 AM">3:30 AM</option>
+                                        <option className={style.pickerText} value="4:00 AM">4:00 AM</option>
+                                        <option className={style.pickerText} value="4:30 AM">4:30 AM</option>
+                                        <option className={style.pickerText} value="5:00 AM">5:00 AM</option>
+                                        <option className={style.pickerText} value="5:30 AM">5:30 AM</option>
+                                        <option className={style.pickerText} value="6:00 AM">6:00 AM</option>
+                                        <option className={style.pickerText} value="6:30 AM">6:30 AM</option>
+                                        <option className={style.pickerText} value="7:00 AM">7:00 AM</option>
+                                        <option className={style.pickerText} value="7:30 AM">7:30 AM</option>
+                                        <option className={style.pickerText} value="8:00 AM">8:00 AM</option>
+                                        <option className={style.pickerText} value="8:30 AM">8:30 AM</option>
+                                        <option className={style.pickerText} value="9:00 AM">9:00 AM</option>
+                                        <option className={style.pickerText} value="9:30 AM">9:30 AM</option>
+                                        <option className={style.pickerText} value="10:00 AM">10:00 AM</option>
+                                        <option className={style.pickerText} value="10:30 AM">10:30 AM</option>
+                                        <option className={style.pickerText} value="11:00 AM">11:00 AM</option>
+                                        <option className={style.pickerText} value="11:30 AM">11:30 AM</option>
+                                        <option className={style.pickerText} value="12:00 PM">12:00 PM</option>
+                                        <option className={style.pickerText} value="12:30 PM">12:30 PM</option>
+                                        <option className={style.pickerText} value="1:00 PM">1:00 PM</option>
+                                        <option className={style.pickerText} value="1:30 PM">1:30 PM</option>
+                                        <option className={style.pickerText} value="2:00 PM">2:00 PM</option>
+                                        <option className={style.pickerText} value="2:30 PM">2:30 PM</option>
+                                        <option className={style.pickerText} value="3:00 PM">3:00 PM</option>
+                                        <option className={style.pickerText} value="3:30 PM">3:30 PM</option>
+                                        <option className={style.pickerText} value="4:00 PM">4:00 PM</option>
+                                        <option className={style.pickerText} value="4:30 PM">4:30 PM</option>
+                                        <option className={style.pickerText} value="5:00 PM">5:00 PM</option>
+                                        <option className={style.pickerText} value="5:30 PM">5:30 PM</option>
+                                        <option className={style.pickerText} value="6:00 PM">6:00 PM</option>
+                                        <option className={style.pickerText} value="6:30 PM">6:30 PM</option>
+                                        <option className={style.pickerText} value="7:00 PM">7:00 PM</option>
+                                        <option className={style.pickerText} value="7:30 PM">7:30 PM</option>
+                                        <option className={style.pickerText} value="8:00 PM">8:00 PM</option>
+                                        <option className={style.pickerText} value="8:30 PM">8:30 PM</option>
+                                        <option className={style.pickerText} value="9:00 PM">9:00 PM</option>
+                                        <option className={style.pickerText} value="9:30 PM">9:30 PM</option>
+                                        <option className={style.pickerText} value="20:00 PM">10:00 PM</option>
+                                        <option className={style.pickerText} value="20:30 PM">10:30 PM</option>
+                                        <option className={style.pickerText} value="21:00 PM">11:00 PM</option>
+                                        <option className={style.pickerText} value="21:30 PM">11:30 PM</option>
+                                    </select>
+                                </div>
+
                             </div>
                             <div className={style.appReservationButtonContainer}>
-                                <div className={style.appReservationButton}>
-                                    <button>Find a Table</button>
-                                </div>
+                                <button className={style.appReservationButton} >Find a Table</button>
                             </div>
                             <div className={style.appReservationBookingContainer}>
-                                <div className={style.appReservationBookingLogo}>Logo here</div>
-                                <div className={style.appReservationBookingText}>Booked 9 times today</div>
+                                <i className={"material-icons" + ' ' + style.appReservationBookingLogo}>restaurant_menu</i>
+                                <div className={style.appReservationBookingText}>Booked 23 times today</div>
                             </div>
                         </div>
                         <div className={style.appReservationSaveButtonContainer}>
-                            <div className={style.appReservationSaveButton}>
-                                <div>Button Logo</div>
-                                <button>Save this Button</button>
+                            <div className={style.saveButtonWrapper}>
+                                <a href className={style.saveRestaurantButton}>
+                                    <i className={"material-icons" + ' ' + style.appReservationBookingLogo}>bookmark_border</i>
+                                    Save this restaurant
+                                </a>
                             </div>
                         </div>
                     </div>

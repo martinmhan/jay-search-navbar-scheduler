@@ -1,16 +1,12 @@
 .containerSticky{
-    border: solid;
     max-width: 992px;
     margin-left: auto;
     margin-right: auto;
-    border-color: orange;
-    height: 70%;
+    height: 100%;
     position: relative;
 }
 .containerContent{
     height: 80%;
-    border: solid;
-    border-color: red;
     max-width: 992px;
     position: absolute;
     top: 0;
@@ -22,8 +18,6 @@
     /* position: -webkit-sticky;  */
     height: 100%;
     max-width: 992px;
-    border: solid;
-    border-color: blue;
     position: absolute;
     top: 0;
     left: 0;
@@ -56,8 +50,9 @@
     width: 640px;
     box-sizing: border-box;
     margin: 0 2rem 0 0; 
-    border: solid;
-    border-color: black;
+    border-bottom: solid #333;
+    border-width: thin;
+    background-color: white;
 }
 .appMovingNavBar{
     position: sticky;
@@ -65,8 +60,6 @@
     display: flex;
     flex-grow: 2;
     float: left;
-    border: solid;
-    border-color: black;
 }
 .appMovingNavBarList{
     padding: 0;
@@ -76,6 +69,7 @@
     display: inline;
     font-size: 14px;
     font-weight: 500;
+    background-color: white;
 }
 .appMovingNavBarListHeader{
     padding: 14px .5rem;
@@ -85,12 +79,13 @@
     padding: 14px .5rem;
     flex-direction: row;
     color:#F38A8A;
-    border-bottom:3px solid #F38A8A;
+    border-bottom:3px solid red;
 }
 
-.active{
+.active {
     color:#F38A8A;
-    border-bottom:3px solid #F38A8A;
+    padding: 14px 0 14px 0;
+    border-bottom:3px solid red;
 }
 /* .navBarText{
     font-size: 14px;
@@ -108,8 +103,7 @@
     top: 0;
     width: 320px;
     min-height: 400px;
-    border: solid;
-    border-color: pink;
+    background-color: white;
     display: flex;
     flex-direction: column;
     /* flex-flow: wrap; */
@@ -119,20 +113,22 @@
     width: 320px;
     display: flex;
     flex-direction: column;
-    border: solid;
-    border-color: green;
     flex-flow: wrap;
     flex-wrap: wrap;
     position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .appReservationTop{
     height: 48px;
-    flex-basis: 100%;
+    flex-basis: 90%;
+    margin: auto;
     display: flex;
-    border: solid;
+    border-bottom: solid;
     border-width: thin;
     border-color: black;
+    background-color: white;
 }
+
 .appReservationHeaderTop{ 
     font-size: 1.3rem;
     margin: auto;
@@ -140,15 +136,60 @@
 }
 .appReservationPartySize{
     height: 65px;
-    flex-basis: 100%;
+    flex-basis: 90%;
+    margin: auto;
     display: flex;
-    border: solid;
+    border-bottom: solid;
+    border-width: thin;
     border-color: black;
+    background-color: white;
+    position: relative;
 }
 .appReservationHeader{
     margin: auto;
-    font-size: .875rem;
+    font-size: 16px;
     font-weight: 500;
+    padding-left: 8px;
+}
+.customPartyCounter{
+    background-color: white;
+    border: none;
+    font-size: 16px;
+    width: 280px;
+    height: 48px;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+.partySizeHeader{
+    flex: 1;
+    flex-basis: 100%;
+    margin: 0;
+    justify-content: flex-start;
+}
+.partyCounterInput{
+    display: flex;
+    flex: 1;
+    flex-basis: 100%;
+    flex-direction: row;
+} 
+.currentPartyCounter{
+    flex: 4;
+    justify-content: flex-start;
+}
+.partyCounter select {
+    opacity: 0;
+    font-size: 14px;
+    font: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    width: 280px;
+    height: 48px;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: 5;
+    margin-top: 5px;
 }
 .partyCounter{
     margin: auto;
@@ -163,69 +204,163 @@
     /* display: inline-block; */
     height: 65px;
     display: flex;
-    border: solid;
-    border-color: black;
-    flex-basis: 100%;
+    flex-basis: 90%;
+    margin: auto;
+    flex-direction: row;
+    background-color: white;
+    justify-content: space-between;
+}
+.reservationDatePickerInput{
+    width: 100%;
+    display: flex;
+}
+
+.arrowDownLogo{
+    flex: 1;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+
+.timePicker{
+    /* width: 160px; */
+    /* height: 48px; */
+    flex: 1;
+    flex-basis: 40%;
+    justify-content: flex-end;
+    border-bottom: solid;
+    border-width: thin;
+    position: relative;
+    display: flex;
+}
+.customSelectTime{
+    background-color: white;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    width: 160px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    flex-direction: column;
+}
+.timePickerHeader{
+    flex: 1;
+}
+.timePickerInput{
+    flex: 1;
+    display: flex;
     flex-direction: row;
 }
-.appReservationButton{
-    background-color: white;
-    width: 100%;
+.currentSelectTime{
+    flex: 4;
+    justify-content: flex-start;
+    margin: auto;
 }
+.timePicker select {
+    opacity: 0;
+    font-size: 14px;
+    font: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    width: 160px;
+    height: 48px;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: 5;
+}
+.pickerText{
+    font-size: 1rem;
+}
+
 .appReservationDate{
-    flex-basis: 50%;
-    border: solid;
-    border-color: black;
+    flex-basis: 40%;
+    flex: 1;
+    justify-content: flex-start;
+    border-bottom: solid;
+    border-width: thin;
 }
-.appReserationTime{
-    flex-basis: 50%;
+/* .appReserationTime{
+    flex-basis: 45%;
     border: solid;
-    border-color: black;
-}   
+    justify-content: flex-start;
+    border-bottom: solid;
+    border-width: thin;
+    background-color: white;
+}    */
 /* .timePicker{
 
 } */
 /* .selectTime{
 
 } */
-
+.appDatePickerButton{
+    margin: auto;
+}
 .appReservationButtonContainer{
     flex-grow: 2px;
     height: 60px;
     max-height: 130px;
     flex-basis: 100%;
     display: flex;
-    border: solid;
-    border-color: black;
+    background-color: white;
 }
 .appReservationButton{
     margin: auto;
+    width: 288px;
+    background-color: red;
+    height: 48px;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    text-align: center;
 }
+
 .appReservationBookingContainer{
     flex-grow: 1px;
     height: 48px;
     max-height: 75px;
-    border: solid;
-    border-color: red;
     display: flex;
     flex-basis: 100%;
     flex-direction: row;
-    justify-content: start;
+    background-color: white;
 }
 .appReservationBookingLogo{
     flex: 1;
+    justify-content: flex-start;
+    margin:auto;
 }
 .appReservationBookingText{
-    flex: 4
+    flex: 4;
+    justify-content: flex-start;
+    margin:auto;
 }
 .appReservationSaveButtonContainer{
     border: solid;
     border-color: black;
-    min-height: 90px;
+    border-width: thin;
     display: flex;
+    margin:auto;
+    width: 288px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+ /* .saveButtonWrapper{
+    width: 100%;
+    height: 100%;
+    text: 12px;
+} */
+.appReservationBookingLogo{
+    margin: auto;
 }
 .appReservationSaveButton{
-    margin: auto;
+    width: 288px;
+    height: 50px;
+    font-size: 12px;
+    background-color: white;
+    text-align: center;
 } 
 
 

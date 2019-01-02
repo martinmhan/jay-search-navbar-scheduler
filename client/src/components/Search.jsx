@@ -98,9 +98,9 @@ class Search extends React.Component {
                             {/* cant pass down the function for onclick here */}
                             <div className={style.timePicker}>
                                 <div class={style.customSelectTime}>
-                                    <i className={"material-icons" + ' ' + style.mobileOutsideComponents}>access_time</i>
+                                    <i className={"material-icons" + ' ' + style.selectTimeIcons}>access_time</i>
                                     <div className={style.currentSelectTime}>{this.state.selectedTime}</div>
-                                    <i className={"material-icons" + ' ' + style.mobileOutsideComponents}>keyboard_arrow_down</i>
+                                    <i className={"material-icons" + ' ' + style.selectTimeIcons}>keyboard_arrow_down</i>
                                 </div>
                                 <select id="selectedTime" onChange={this.handleSelect}>
                                     <option className={style.pickerText} value="12:00 AM">12:00 AM</option>

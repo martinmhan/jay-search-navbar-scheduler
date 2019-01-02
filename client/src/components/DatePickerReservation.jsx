@@ -8,7 +8,7 @@ class DatePickerReservation extends React.Component {
         this.state = {
             currentMonth: new Date(),
             selectedDate: new Date(),
-            clickedOnDate: this.props.clickedOnDate
+            handleClickedOnDate: this.props.handleClickedOnDate
         };
         this.onDateClick = this.onDateClick.bind(this);
         this.nextMonth = this.nextMonth.bind(this);
@@ -98,7 +98,8 @@ class DatePickerReservation extends React.Component {
     }
 
     onDateClick(day) {
-        this.props.handleDaySelection(day);
+        let convertedDay = dateFns.format(day, 'ddd, M/D')
+        this.state.handleClickedOnDate(convertedDay);
         this.setState({
             selectedDate: day
         });
