@@ -93,11 +93,11 @@ class Search extends React.Component {
                     </div>
                     <div className={style.searchBottomComponents}>
                         <div className={style.pickerContainer}>
-                            <a href className={style.datePicker} id="datePickerSearch" onClick={this.handleClickSearch}>
+                            <div className={style.datePicker} id="datePickerSearch" onClick={this.handleClickSearch}>
                                 <i className={"material-icons" + ' ' + style.searchDropLogo}>calendar_today</i>
                                 <div className={style.datePickerInput}>{this.state.selectedDay}</div>
                                 <i className={"material-icons" + ' ' + style.searchDropLogo}>keyboard_arrow_down</i>
-                            </a>
+                            </div>
                             <div className={style.timePicker}>
                                 <div class={style.customSelectTime}>
                                     <i className={"material-icons" + ' ' + style.searchDropLogo}>access_time</i>
@@ -197,7 +197,7 @@ class Search extends React.Component {
                             <button className={style.searchFindTableButton}>Find a Table</button>
                         </div>
 
-                        <div className={style.searchResults}>
+                        {/* <div className={style.searchResults}>
                             <header className={style.searchHeader}>search: "{this.state.text}"</header>
                             {cityMatch.length !== 0 ? <div className={style.locationResults}>
                                 <div className={style.searchCategoryText}>Locations</div>
@@ -217,7 +217,7 @@ class Search extends React.Component {
                                     {this.state.restaurantMatch.map(restMatch => <li><a href class="font searchResultText">{restMatch.restaurantName}</a></li>)}
                                 </ul>
                             </div> : <div></div>}
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div >
