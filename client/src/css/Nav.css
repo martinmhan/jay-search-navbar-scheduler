@@ -2,16 +2,14 @@
     font-size: 16px;
     width: 636px;
     height: 500px;
-    border:solid;
-    border-width: 0.5px;
-    border-color:  #333;
-    border-width: thin;
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 65px;
     left: 80px;
     background-color: white;
+    color: #999; 
+    border: 0.5px solid;
     z-index: 3;
 }
 .topLocationNav{
@@ -19,9 +17,8 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    border:solid;
-    border-width: thin;
-    border-color:  #333;
+    color: #999; 
+    border-bottom: 0.5px solid;
 }
 .locationNavText{
     width: 50%;
@@ -30,6 +27,7 @@
     margin: auto;
     /* text-align: center; */
     font-weight: 200;
+    color: black;
 
 }
 .midLocationNav{
@@ -37,15 +35,20 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    border: 0.3px solid;
+    /* border: 0.3px solid;
     border-color:  #333;
-    border-width: thin;
+    border-width: thin; */
+    /* color: #999; */
+    /* border-left: 3px solid transparent;
+    border-right: 3px solid transparent; */
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; */
 }
 .leftMidLocationNav{
     width: 50%;
-    border-color:  #333;
-    border-width: thin;
-    border-right: solid;
+    color: #999; 
+    border-right: 0.5px solid;
     overflow: auto;
 }
 .rightMidLocationNav{
@@ -55,16 +58,16 @@
 .bottomLocationNav{
     width: 100%;
     height: 15%;
-    border:solid;
     display: flex;
-    border-color:  #333;
-    border-width: thin;
+    border-color: #999; 
+    border-top: 0.5px solid;
 }
 .bottomLocationNavText{
     justify-content: flex-start;
     text-align: left;
     margin-top: 15px; 
     padding-left: 30px;
+    color: black;
 } 
 .metroNameRender{
     justify-content: flex-start;
@@ -79,9 +82,11 @@
 .regionCityList{
     overflow: scroll;
     padding: 0;
-    border:solid;
+    /* border-left: 1px solid;
+    color: #999; */
+    /* border:solid;
     border-color:  #333;
-    border-width: thin;
+    border-width: thin; */
 }
 .singleRegionCityDiv{
     width: 315px;

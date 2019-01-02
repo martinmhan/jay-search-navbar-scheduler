@@ -50,9 +50,11 @@
     border: solid;
     border-color: #f7f7f7;
 }
-/* .datePickerInput{
-
-} */
+.datePickerInput{
+    width: 160px;
+    height: 48px;
+    background-color: white;
+}
 .timePicker{
     width: 160px;
     height: 48px;
@@ -96,6 +98,10 @@
 }
 .pickerText{
     font-size: 1rem;
+}
+.closeIcon{
+    margin-right: 25px;
+    font: 24px;
 }
 /* .selectTime{
 

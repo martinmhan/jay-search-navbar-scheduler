@@ -16,6 +16,7 @@ class Search extends React.Component {
             selectedDay: "Jan 4, 2019",
             selectedTime: "6:00 AM",
             datePickerSearch: false,
+            handleClickTopBar: this.props.handleClickTopBar
 
         }
         this.handleSelect = this.handleSelect.bind(this);
@@ -82,7 +83,7 @@ class Search extends React.Component {
                     {datePickerSearch ? <DatePickerSearch handleClickSearch={this.handleClickSearch} handleDaySelection={this.handleDaySelection} /> : <div></div>}
 
                     <div className={style.searchCloseButtonContainer}>
-                        <button id="searchButton" onClick={this.props.handleClickTopBar} className={style.searchCloseButton}><i className={"material-icons" + ' ' + style.mobileOutsideComponents}>close</i></button>
+                        <i id="searchButton" onClick={this.state.handleClickTopBar} className={"material-icons" + ' ' + style.closeIcon}>close</i>
                         {/* cant pass down the clickhandler here either */}
                     </div>
                     <div className={style.searchHeaderMessage}>
@@ -94,7 +95,7 @@ class Search extends React.Component {
                         <div className={style.pickerContainer}>
                             {/* <div className={style.datePicker}>
                             </div> */}
-                            <button id="datePicker" onClick={this.handleClickSearch} className={style.datePickerInput}>{this.state.selectedDay}</button>
+                            <a href id="datePicker" onClick={this.handleClickSearch} className={style.datePickerInput}>{this.state.selectedDay}</a>
                             {/* cant pass down the function for onclick here */}
                             <div className={style.timePicker}>
                                 <div class={style.customSelectTime}>
@@ -211,7 +212,7 @@ class Search extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
         )
     }
 }
