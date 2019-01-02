@@ -15,6 +15,7 @@ class Search extends React.Component {
             restaurantMatch: [],
             selectedDay: "Jan 4, 2019",
             selectedTime: "6:00 AM",
+            selectedPartyCount: "1 Person",
             datePickerSearch: false,
             handleClickTopBar: this.props.handleClickTopBar
 
@@ -50,8 +51,7 @@ class Search extends React.Component {
         })
     }
     handleClickSearch(e) {
-        console.log('here');
-        console.log(e)
+
         let name = e.target.id;
         console.log(name)
         this.setState({
@@ -93,15 +93,16 @@ class Search extends React.Component {
                     </div>
                     <div className={style.searchBottomComponents}>
                         <div className={style.pickerContainer}>
-                            {/* <div className={style.datePicker}>
-                            </div> */}
-                            <a href id="datePicker" onClick={this.handleClickSearch} className={style.datePickerInput}>{this.state.selectedDay}</a>
-                            {/* cant pass down the function for onclick here */}
+                            <a href className={style.datePicker} id="datePickerSearch" onClick={this.handleClickSearch}>
+                                <i className={"material-icons" + ' ' + style.searchDropLogo}>calendar_today</i>
+                                <div className={style.datePickerInput}>{this.state.selectedDay}</div>
+                                <i className={"material-icons" + ' ' + style.searchDropLogo}>keyboard_arrow_down</i>
+                            </a>
                             <div className={style.timePicker}>
                                 <div class={style.customSelectTime}>
-                                    <i className={"material-icons" + ' ' + style.selectTimeIcons}>access_time</i>
+                                    <i className={"material-icons" + ' ' + style.searchDropLogo}>access_time</i>
                                     <div className={style.currentSelectTime}>{this.state.selectedTime}</div>
-                                    <i className={"material-icons" + ' ' + style.selectTimeIcons}>keyboard_arrow_down</i>
+                                    <i className={"material-icons" + ' ' + style.searchDropLogo}>keyboard_arrow_down</i>
                                 </div>
                                 <select id="selectedTime" onChange={this.handleSelect}>
                                     <option className={style.pickerText} value="12:00 AM">12:00 AM</option>
@@ -154,35 +155,42 @@ class Search extends React.Component {
                                     <option className={style.pickerText} value="21:30 PM">11:30 PM</option>
                                 </select>
                             </div>
-
-                            {/* <div className={style.partyCounter}> */}
-                            <select name="selectPartyCount">
-                                <option className={style.pickerText} value="1">1 person</option>
-                                <option className={style.pickerText} value="2">2 person</option>
-                                <option className={style.pickerText} value="3">3 person</option>
-                                <option className={style.pickerText} value="4">4 person</option>
-                                <option className={style.pickerText} value="5">5 person</option>
-                                <option className={style.pickerText} value="6">6 person</option>
-                                <option className={style.pickerText} value="7">7 person</option>
-                                <option className={style.pickerText} value="8">8 person</option>
-                                <option className={style.pickerText} value="9">9 person</option>
-                                <option className={style.pickerText} value="10">10 person</option>
-                                <option className={style.pickerText} value="11">11 person</option>
-                                <option className={style.pickerText} value="12">12 person</option>
-                                <option className={style.pickerText} value="13">13 person</option>
-                                <option className={style.pickerText} value="14">14 person</option>
-                                <option className={style.pickerText} value="15">15 person</option>
-                                <option className={style.pickerText} value="16">16 person</option>
-                                <option className={style.pickerText} value="17">17 person</option>
-                                <option className={style.pickerText} value="18">18 person</option>
-                                <option className={style.pickerText} value="19">19 person</option>
-                                <option className={style.pickerText} value="20">20 person</option>
-                                <option className={style.pickerText} value="21">Larger party</option>
-                            </select>
-                            {/* </div> */}
+                            <div className={style.partyCount}>
+                                <div class={style.customPartyCount}>
+                                    <i className={"material-icons" + ' ' + style.searchDropLogo}>person</i>
+                                    <div className={style.currentPartyCount}>{this.state.selectedPartyCount}</div>
+                                    <i className={"material-icons" + ' ' + style.searchDropLogo}>keyboard_arrow_down</i>
+                                </div>
+                                <select>
+                                    <option className={style.pickerText} value="1 person">1 person</option>
+                                    <option className={style.pickerText} value="2 person">2 person</option>
+                                    <option className={style.pickerText} value="3 person">3 person</option>
+                                    <option className={style.pickerText} value="4 person">4 person</option>
+                                    <option className={style.pickerText} value="5 person">5 person</option>
+                                    <option className={style.pickerText} value="6 person">6 person</option>
+                                    <option className={style.pickerText} value="7 person">7 person</option>
+                                    <option className={style.pickerText} value="8 person">8 person</option>
+                                    <option className={style.pickerText} value="9 person">9 person</option>
+                                    <option className={style.pickerText} value="10 person">10 person</option>
+                                    <option className={style.pickerText} value="11 person">11 person</option>
+                                    <option className={style.pickerText} value="12 person">12 person</option>
+                                    <option className={style.pickerText} value="13 person">13 person</option>
+                                    <option className={style.pickerText} value="14 person">14 person</option>
+                                    <option className={style.pickerText} value="15 person">15 person</option>
+                                    <option className={style.pickerText} value="16 person">16 person</option>
+                                    <option className={style.pickerText} value="17 person">17 person</option>
+                                    <option className={style.pickerText} value="18 person">18 person</option>
+                                    <option className={style.pickerText} value="19 person">19 person</option>
+                                    <option className={style.pickerText} value="20 person">20 person</option>
+                                    <option className={style.pickerText} value="Larger party">Larger party</option>
+                                </select>
+                            </div>
                         </div>
                         <div className={style.searchBar}>
-                            <input className={style.searchInput} onChange={this.handleInput}></input>
+                            <div className={style.customSearchBar}>
+                                <i className={"material-icons" + ' ' + style.searchDropLogo}>search</i>
+                            </div>
+                            <input className={style.searchInput} onChange={this.handleInput} placeHolder="Location, Restaurant, or Cuisine"></input>
                         </div>
 
                         <div className={style.searchFindTableButtonContainer}>

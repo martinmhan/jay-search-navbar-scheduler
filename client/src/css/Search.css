@@ -40,41 +40,54 @@
     color: black;
 }
 .pickerContainer{
-    flex: 4;
+    flex: 5;
     display: flex;
 }
 .datePicker{
     width: 160px;
     height: 48px;
     flex: 1;
-    border: solid;
-    border-color: #f7f7f7;
+    display: flex;
+    border-color: #f7f7f7; 
+    border: 0.5px solid;
 }
 .datePickerInput{
-    width: 160px;
-    height: 48px;
+    flex: 4;
+    margin: auto;
     background-color: white;
+}
+.searchDropLogo{
+    flex: 1;
+    margin: auto;
+    font: 10px;
+    padding: 0 0 0 10px;
 }
 .timePicker{
     width: 160px;
     height: 48px;
     flex: 1;
-    border: solid;
-    border-color: #f7f7f7;
-    position: relative;
     display: flex;
+    position: relative;
 }
 .customSelectTime{
     background-color: white;
     text-align: center;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     width: 160px;
     height: 48px;
+    display: flex;
     position: absolute;
+    border-color: #999; 
+    border-top: 0.5px solid;
+    border-bottom: 0.5px solid;
     top: 0;
     left: 0;
     z-index: 1;
+}
+.currentSelectTime{
+    flex: 2;
+    margin: auto;
 }
 .timePicker select {
     /* background: transparent; */
@@ -103,28 +116,74 @@
     margin-right: 25px;
     font: 24px;
 }
-/* .selectTime{
-
-} */
-.partyCounter{
+.partyCount{
     width: 160px;
     height: 48px;
     flex: 1;
-    border: solid;
-    border-color: #f7f7f7;
+    position: relative;
 }
-/* .selectPartyCount{
-
-} */
+.partyCount select{
+    opacity: 0;
+    font-size: 14px;
+    font: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    width: 160px;
+    height: 48px;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: 5;
+}
+.customPartyCount{
+    background-color: white;
+    text-align: center;
+    border: none;
+    font-size: 14px;
+    width: 160px;
+    height: 48px;
+    border-color: #999; 
+    border: 0.5px solid;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.currentPartyCount{
+    flex: 4;
+    margin: auto;
+}
 .searchBar{
     flex: 2;
     border-radius: 4px;
-}
-/* .searchInput{
+    margin-left: 20px;
+    width: 288px;
+    height: 48px;
+    position: relative;
+    border-color: #999; 
+    border: 0.5px solid;
 
-} */
+}
+.customSearchBar{
+    width: 288px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+.searchInput{
+    width: 248px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    font-size: 14px;
+    font: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    z-index: 5;
+}
 .searchFindTableButtonContainer{
     flex: 1;
+    margin-left: 20px;
 }
 .searchFindTableButton{
     width: 144px;
