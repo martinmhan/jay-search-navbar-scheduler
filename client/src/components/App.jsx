@@ -3,7 +3,6 @@ import TopBar from './TopBar.jsx';
 import TopPhoto from './TopPhoto.jsx';
 import StickyContainer from './StickyContainer.jsx';
 import style from '../css/App.css';
-// import $ from 'jquery';
 
 class App extends React.Component {
     constructor(props) {

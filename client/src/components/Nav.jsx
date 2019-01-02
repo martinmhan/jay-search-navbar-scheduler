@@ -28,7 +28,6 @@ class Nav extends React.Component {
     }
     getCities() {
         let metro = this.state.currentMetro;
-        // console.log("METROOO", metro)
         axios.get(`/api/nav/${metro}`)
             .then(data => {
                 // console.log('DATATTTA', data)
@@ -60,7 +59,7 @@ class Nav extends React.Component {
                     </div>
                 </div>
                 <div className={style.bottomLocationNav}>
-                    <div className={style.smallText}>Full List of Metros</div>
+                    <div className={style.bottomLocationNavText}>Full List of Metros</div>
                 </div>
             </div>
         )

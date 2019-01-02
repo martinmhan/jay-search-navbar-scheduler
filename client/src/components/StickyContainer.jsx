@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../css/StickyContainer.css';
-import DatePicker from './DatePicker.jsx';
+import DatePickerReservation from './DatePickerReservation.jsx';
 import * as Scroll from 'react-scroll';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
@@ -61,19 +61,19 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
                             TESTING
                         </div>
                         <div id="photos">
-                            KODAKKKKK
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit vel quae neque non veniam, natus eius pariatur odit, sed consequatur recusandae blanditiis minus eos laborum deleniti repellat numquam reiciendis ullam.
                         </div>
                         <div id="menu" className={style.testDummyPara}>
-                            Youre a dummy dummy. GO DUMBBB DUUMBBBB DUMBBBB.
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime consectetur, voluptates quis est, iste impedit sequi perspiciatis beatae mollitia quasi sit ratione saepe repellendus excepturi quas, soluta eaque dolorem! Dolorum, veritatis dolores, eos quo inventore suscipit tempora explicabo debitis quae recusandae itaque est voluptates veniam, nostrum dolor! Assumenda, quod dolor!
                         </div>
                         <div id="specials" className={style.testDummyPara}>
-                            3 for a dollar swishers.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem id debitis non tenetur laboriosam delectus velit voluptatibus quasi nobis, culpa illo eos quas ipsa quae enim neque exercitationem nisi consequatur?
                         </div>
                         <div id="reviews" className={style.testDummyPara}>
-                            TENGO HOMBRE
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sit, laboriosam pariatur veniam dolorum laudantium animi mollitia reiciendis impedit amet eaque nihil odio quo magni, iusto distinctio in corporis aperiam rerum nostrum fugit? Qui, assumenda est doloremque voluptatem impedit ad.
                         </div>
                         <div id="twitter" className={style.testDummyPara}>
-                            TRIGGER FINGER TURN TO TWITTER FINGERS
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nulla dignissimos doloremque cum eaque rerum? Veniam, nostrum magni tempore tempora quos tenetur commodi deserunt! Quo veniam earum sapiente accusamus et?
                         </div>
 
                     </div>
@@ -112,7 +112,7 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
                     <div className={style.appReservationContainer}>
                         <div className={style.appReservation}>
                             <div className={style.reservationCal}>
-                                {this.state.reservationCal === true ? <DatePicker /> : <div></div>}
+                                {this.state.reservationCal === true ? <DatePickerReservation /> : <div></div>}
                             </div>
                             <div className={style.appReservationTop}>
                                 <h3 className={style.appReservationHeaderTop}>Make Reservation</h3>
@@ -149,8 +149,7 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
                             <div className={style.appReservationTimeAndDate}>
                                 <div className={style.appReservationDate}>
                                     <h4 className={style.appReservationHeader}>Date</h4>
-
-                                    <button className={style.appReservationButton} onClick={this.reservationButtonHandler}>ReservationButton</button>
+                                    <a href className={style.appReservationButton} onClick={this.reservationButtonHandler}>ReservationButton</a>
                                 </div>
                                 <div className={style.appReservationTime}>
                                     <h4 className={style.appReservationHeader}>Time</h4>

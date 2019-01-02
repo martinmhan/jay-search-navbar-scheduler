@@ -59,25 +59,40 @@
     flex: 1;
     border: solid;
     border-color: #f7f7f7;
+    position: relative;
+    display: flex;
 }
 .customSelectTime{
     background-color: white;
     text-align: center;
+    border: none;
     font-size: 16px;
     width: 160px;
     height: 48px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
-.customSelectTime select {
-    background: transparent;
-    text-align: center;
+.timePicker select {
+    /* background: transparent; */
+    opacity: 0;
+    /* text-align: center;
     background-color: white;
-    border: none;
+    border: none; */
     font-size: 14px;
-    padding: 5px; 
+    font: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    /* padding: 5px;  */
     width: 160px;
     height: 48px;
-    background: no-repeat scroll;
-    overflow: hidden;
+    /* background: no-repeat scroll;
+    overflow: hidden; */
+    /* -webkit-appearance: menulist-button;
+    height: 50px; */
+    position: absolute;
+    top: 0; 
+    left: 0;
+    z-index: 5;
 }
 .pickerText{
     font-size: 1rem;

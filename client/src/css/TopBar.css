@@ -152,7 +152,7 @@
 .locationNavHeader{
     margin: auto;
     flex: auto;
-    color: #333;
+    color: rgb(66, 38, 38);
 } 
 .locationNavHeaderIcon{
     color:  #D3D3D3;
