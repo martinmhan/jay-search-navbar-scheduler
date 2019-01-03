@@ -58,7 +58,7 @@ class Nav extends React.Component {
                         <div className={style.regionCityList}>
                             {this.state.metros.map(metro => <a href className={style.singleRegionCityDiv} onClick={this.handleSelection}>
                                 <div className={style.metroNameRender}>{metro}</div>
-                                <i className={"material-icons" + ' ' + style.arrowDownLogo}>keyboard_arrow_down</i>
+                                <i className={"material-icons" + ' ' + style.arrowForwardLogo}>arrow_forward_ios</i>
                             </a>)}
                         </div>
                     </div>

@@ -40,20 +40,20 @@ class TopBar extends React.Component {
                     </div>
                     <div className={style.topContainerS1Right}>
                         <div className={style.topContainerS1RightS1}>
-                            <a href className={style.smallLinks}>For Restauranteurs</a>
+                            <a href className={style.smallLinksTop}>For Restauranteurs</a>
                         </div>
                         <div className={style.topContainerS1RightS2}>
-                            <a href id="mobile" onClick={this.handleClickTopBar} className={style.smallLinks + ' ' + style.mobileOutsideComponents}>Mobile</a>
-                            <i className={"material-icons" + ' ' + style.mobileOutsideComponents}>keyboard_arrow_down</i>
+                            <a href id="mobile" onClick={this.handleClickTopBar} className={style.smallLinksTop}>Mobile</a>
+                            <i className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
                         </div>
                         <div className={style.topContainerS1RightS3}>
-                            <a href className={style.smallLinks}>Help</a>
+                            <a href className={style.smallLinksTop}>Help</a>
                         </div>
                         <div className={style.topContainerS1RightS4}>
-                            <i className={"material-icons" + ' ' + style.outsideEnComponents}>language</i>
-                            <a href id="en" onClick={this.handleClickTopBar} className={style.smallLinks + ' ' + style.outsideEnComponents}>EN</a>
+                            <i className={"material-icons" + ' ' + style.topBarLogos}>language</i>
+                            <a href id="en" onClick={this.handleClickTopBar} className={style.smallLinksTop}>EN</a>
                             {enClicked ? <EnDrop /> : <div></div>}
-                            <i className={"material-icons" + ' ' + style.outsideEnComponents}>keyboard_arrow_down</i>
+                            <i className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
                         </div>
                     </div>
                 </div>
@@ -62,11 +62,12 @@ class TopBar extends React.Component {
                 <div className={style.topContainerS2}>
                     {navClicked ? (<Nav />) : (<div></div>)}
                     <div className={style.topContainerS2S1}>
-                        <img className={style.openTableLogo} src={"https://s3-us-west-1.amazonaws.com/table-it/otlogoreg.png"} />
+                        <img className={style.openTableLogo} src={"https://s3-us-west-1.amazonaws.com/gitbuckets/hrla26-fec-tableit/tableit_logo.png"} />
+                        <div className={style.openTableLogoText}>TableIt®</div>
                     </div>
                     <button className={style.topContainerS2S2} id="locationNav" onClick={this.handleClickTopBar}>
                         <div id="locationNav" className={style.locationNav}>
-                            <i id="locationNav" className={"material-icons" + ' ' + style.locationNavHeaderIcon}>location_on</i>
+                            <i id="locationNav" className={"material-icons" + ' ' + style.location_onNavHeaderIcon}>location_on</i>
                             <div id="locationNav" className={style.locationNavHeader + ' ' + style.smallLinks}>Los Angeles</div>
                             <i id="locationNav" className={"material-icons" + ' ' + style.locationNavHeaderIcon}>keyboard_arrow_right</i>
                             <div id="locationNav" className={style.locationNavHeader + ' ' + style.smallLinks}>West Hollywood / Beverly Hills / Mid-Wilshire</div>
@@ -91,13 +92,13 @@ class TopBar extends React.Component {
                             <div className={style.smallText}>United States</div>
                         </div>
                         <div className={style.topContainerS3S3}>
-                            <a href className={style.smallText}>Los Angeles</a>
+                            <a href className={style.smallLinks}>Los Angeles</a>
                         </div>
                         <div className={style.topContainerS3S4}>
-                            <a href className={style.smallLinks}>Make Dynamic</a>
+                            <a href className={style.smallLinks}>West Hollywood / Beverly Hills / Mid-Wilshire</a>
                         </div>
                         <div className={style.topContainerS3S5}>
-                            <div className={style.smallText}>Manhattan Beach/Hermosa</div>
+                            <div className={style.smallText}>West Hollywood</div>
                         </div>
                     </div>
                 </div>
