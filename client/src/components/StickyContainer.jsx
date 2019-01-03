@@ -18,7 +18,7 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
             twitter: false,
             reservationCal: false,
             clickedOnDate: "Tue, 2/19",
-            selectedPartyCount: "0 person",
+            selectedPartyCount: "For 0",
             selectedTime: "12:00 PM"
         }
         this.handleClickedOnDate = this.handleClickedOnDate.bind(this);
@@ -72,6 +72,7 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
 
     render() {
         return (
+            // <div className="overlayContainerSticky">
             <div className={style.containerSticky}>
                 <div className={style.containerContent}>
                     <div className={style.content}>
@@ -245,7 +246,7 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
                                 <button className={style.appReservationButton} >Find a Table</button>
                             </div>
                             <div className={style.appReservationBookingContainer}>
-                                <i className={"material-icons" + ' ' + style.appReservationBookingLogo}>restaurant_menu</i>
+                                <i className={"material-icons" + ' ' + style.appReservationBookingLogo}>trending_up</i>
                                 <div className={style.appReservationBookingText}>Booked 23 times today</div>
                             </div>
                         </div>
@@ -260,6 +261,7 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
                     </div>
                 </div>
             </div>
+            // </div>
         )
     }
 }
