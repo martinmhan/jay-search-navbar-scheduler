@@ -7,7 +7,7 @@ class Nav extends React.Component {
         super(props);
         this.state = {
             cities: ['Alameda', 'Alhambra', 'Altadena', 'Anza', 'Arcadia', 'Bakersfield', 'Bellflower', 'Belmont', 'Big Sur', 'Calabasas', 'Canoga Park', 'Capistrano Beach', 'Carson', 'Cerritos', 'Commerse', 'Compton', 'Costa Mesa', 'Cupertino', 'Dana Point', 'Diamond Bar', 'Downey', 'Encino', 'Fairfax', 'Fremont', 'Fullerton', 'Gilroy', 'Glendora', 'Hawthorne', 'Hollywood', 'Humbolt', 'Irvine', 'Joshua Tree', 'La Canada', 'Laguna Beach', 'Lake Forest', 'Lake Tahoe', 'Malibu', 'Mendocino', 'Napa', 'Newport', 'Newport Beach', 'Oakland', 'Oxnard', 'Orange', 'Ojai', 'Palm Springs', 'Palo Alto', 'Pasadena', 'Playa del Rey', 'Pomona', 'Ramona', 'Rancho Dominguez', 'Redondo Beach', 'Rosemead', 'San Bruno', 'San Diego', 'Santa Fe Springs', 'Santa Monica', 'South Pasadena', 'Temecula', 'Topanga', 'Torrance', 'Tustin', 'Universal City', 'Van Nuys', 'Venice', 'Ventura', 'West Covina', 'West Hollywood', 'Westminister', 'Whittier', 'Woodland Hills', 'Yorba Linda', 'Yucca Valley'],
-            metros: ['Atlanta/Georgia', 'Boston/New_England', 'Chicago/Illinois', 'Dallas', 'Denver/Colorado', 'Houston', 'Las_Vegas', 'Los_Angeles', 'Miami/South_Florida', 'New Orleans/Louisiana', 'New_York_Area', 'Orange_County', 'San_Francisco_Area', 'San_Diego', 'Seattle_Area'],
+            metros: ['Atlanta_Georgia', 'Boston_New_England', 'Chicago_Illinois', 'Dallas', 'Denver_Colorado', 'Houston', 'Las_Vegas', 'Los_Angeles', 'Miami_South_Florida', 'New_Orleans_Louisiana', 'New_York_Area', 'Orange_County', 'San_Francisco_Area', 'San_Diego', 'Seattle_Area'],
             currentMetro: 'Los_Angeles',
             random: 20
         }
@@ -19,7 +19,19 @@ class Nav extends React.Component {
     }
     handleSelection(e) {
         let selectedMetro = e.target.innerHTML;
-        selectedMetro = selectedMetro.slice(1, selectedMetro.length);
+        // selectedMetro = selectedMetro.slice(1, selectedMetro.length);
+        // let removeIndex = selectedMetro.indexOf("/");
+        // if (removeIndex > 0) {
+        //     let split = selectedMetro.split('')
+        //     split.splice(removeIndex, 1);
+        //     split.join(' ')
+        //     let context = this;
+        //     this.setState({
+        //         currentMetro: split
+        //     }, () => {
+        //         context.getCities();
+        //     })
+        // } else {
         let context = this;
         this.setState({
             currentMetro: selectedMetro
@@ -27,11 +39,11 @@ class Nav extends React.Component {
             context.getCities();
         })
     }
+
     getCities() {
         let metro = this.state.currentMetro;
         axios.get(`/api/nav/${metro}`)
             .then(data => {
-                // console.log('DATATTTA', data)
                 let result = data.data;
                 this.setState({
                     cities: result

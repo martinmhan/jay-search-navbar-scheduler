@@ -8,25 +8,42 @@ const SearchResults = (props) => {
     let restaurantMatch = props.restaurantMatch;
     return (
         <div className={style.searchResults}>
-            <header className={style.searchHeader}>search: "{props.text}"</header>
-            {cityMatch.length !== 0 ? <div className={style.locationResults}>
-                <div className={style.searchCategoryText}>Locations</div>
-                <ul>
-                    {props.cityMatch.map(locaMatch => <li><a href className={style.searchResultText}>{locaMatch.city}</a></li>)}
-                </ul>
-            </div> : <div></div>}
-            {cuisineMatch.length !== 0 ? <div className={style.cuisinesResults}>
-                <div className={style.searchCategoryText}>Cuisines</div>
-                <ul>
-                    {props.cuisineMatch.map(cuisMatch => <li><a href className={style.searchResultText}>{cuisMatch.cuisineName}</a></li>)}
-                </ul>
-            </div> : <div></div>}
-            {restaurantMatch.length !== 0 ? <div className={style.restaurantResults}>
-                <div className={style.searchCategoryText}>Restaurants</div>
-                <ul>
-                    {props.restaurantMatch.map(restMatch => <li><a href class="font searchResultText">{restMatch.restaurantName}</a></li>)}
-                </ul>
-            </div> : <div></div>}
+            <div className={style.headerContainerSearch + ' ' + style.hoverOnSearch}>
+                <header className={style.searchHeader}>search: "{props.text}"</header>
+            </div>
+            <div className={style.searchedSection}>
+                {cityMatch.length !== 0 ? <div className={style.locationResults}>
+                    <div className={style.searchCategoryTextContainer}>
+                        <i className={"material-icons" + ' ' + style.searchResultLogo}>location_on</i>
+                        <div className={style.searchCategoryText}>Locations</div>
+                    </div>
+                    <ul className={style.ulContainerSearch}>
+                        {props.cityMatch.map(locaMatch => <div className={style.hoverOnSearch}><div className={style.searchResultText}>{locaMatch.city}</div></div>)}
+                    </ul>
+                </div> : <div></div>}
+            </div>
+            <div className={style.searchedSection}>
+                {cuisineMatch.length !== 0 ? <div className={style.cuisinesResults}>
+                    <div className={style.searchCategoryTextContainer}>
+                        <i className={"material-icons" + ' ' + style.searchResultLogo}>restaurant_menu</i>
+                        <div className={style.searchCategoryText}>Cuisines</div>
+                    </div>
+                    <ul className={style.ulContainerSearch}>
+                        {props.cuisineMatch.map(cuisMatch => <div className={style.hoverOnSearch}><div className={style.searchResultText}>{cuisMatch.cuisineName}</div></div>)}
+                    </ul>
+                </div> : <div></div>}
+            </div>
+            <div className={style.searchedSection}>
+                {restaurantMatch.length !== 0 ? <div className={style.restaurantResults}>
+                    <div className={style.searchCategoryTextContainer}>
+                        <i className={"material-icons" + ' ' + style.searchResultLogo}>store_mall_directory</i>
+                        <div className={style.searchCategoryText}>Restaurants</div>
+                    </div>
+                    <ul className={style.ulContainerSearch}>
+                        {props.restaurantMatch.map(restMatch => <div className={style.hoverOnSearch}><div className={style.searchResultText}>{restMatch.restaurantName}</div></div>)}
+                    </ul>
+                </div> : <div></div>}
+            </div>
         </div>
     )
 }

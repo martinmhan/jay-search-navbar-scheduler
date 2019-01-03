@@ -13,9 +13,6 @@
     margin-right: auto;
     height: 100%;
     position: relative;
-    border: solid;
-    border-width: thick;
-    border-color: red;
 }
 .containerContent{
     height: 80%;
@@ -25,12 +22,9 @@
     top: 0;
     left: 0;
     z-index: 0;
-    /* margin: auto; */
-    border: solid green;
 
 }
 .containerStickyComponents{
-    /* position: -webkit-sticky;  */
     height: 100%;
     max-width: 992px;
     position: absolute;
@@ -40,8 +34,7 @@
     display: flex;
     align-items: flex-start;
     margin: auto; 
-    border: solid;
-    border-color: purple;
+
 }
 .content{
     position: sticky;
@@ -62,7 +55,6 @@
     top: 0px;
     display: flex;
     flex-direction: column;
-    /* check this flex grow*/
     max-width: 640px;
     width: 640px;
     box-sizing: border-box;
@@ -70,7 +62,6 @@
     border-bottom: solid #d8d9db;
     border-width: thin;
     background-color: white;
-    /* margin-left: 10px; */
 }
 .appMovingNavBar{
     /* position: sticky;
@@ -377,16 +368,18 @@
 }
 .saveRestaurantButton{
     display: flex;
+    width: 300px;
+    margin-left: 65px;
+    margin-top: 12px;
 }
 
 .appReservationSaveLogo{
     margin: auto;
-    flex: 1;
 }
 .saveRestaurantButtonText{
     flex: 1;
-    font-size: 12px;
-    text-align: center;
-
+    font-size: 14px;
+    font-weight: 500;
+    width: 170px;
 }
 

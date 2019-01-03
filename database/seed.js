@@ -1,15 +1,23 @@
 const { connection } = require('./index.js');
 // const { Cities, Restaurants, Cuisines } = require('./dbHelpers.js')
 
-let metroList = ['Atlanta/Georgia', 'Boston/New_England', 'Chicago/Illinois', 'Dallas', 'Denver/Colorado', 'Houston', 'Las_Vegas', 'Los_Angeles', 'Miami/South_Florida', 'New Orleans/Louisiana', 'New_York_Area', 'Orange_County', 'San_Francisco_Area', 'San_Diego', 'Seattle_Area']
+let metroList = ['Atlanta_Georgia', 'Boston_New_England', 'Chicago_Illinois', 'Dallas', 'Denver_Colorado', 'Houston', 'Las_Vegas', 'Los_Angeles', 'Miami_South_Florida', 'New_Orleans_Louisiana', 'New_York_Area', 'Orange_County', 'San_Francisco Area', 'San_Diego', 'Seattle_Area']
 
-let laCities = ['Alameda', 'Alhambra', 'Altadena', 'Anza', 'Arcadia', 'Bakersfield', 'Bellflower', 'Belmont', 'Big Sur', 'Calabasas', 'Canoga Park', 'Capistrano Beach', 'Carson', 'Cerritos', 'Commerse', 'Compton', 'Costa Mesa', 'Cupertino', 'Dana Point', 'Diamond Bar', 'Downey', 'Encino', 'Fairfax', 'Fremont', 'Fullerton', 'Gilroy', 'Glendora', 'Hawthorne', 'Hollywood', 'Humbolt', 'Irvine', 'Joshua Tree', 'La Canada', 'Laguna Beach', 'Lake Forest', 'Lake Tahoe', 'Malibu', 'Mendocino', 'Napa', 'Newport', 'Newport Beach', 'Oakland', 'Oxnard', 'Orange', 'Ojai', 'Palm Springs', 'Palo Alto', 'Pasadena', 'Playa del Rey', 'Pomona', 'Ramona', 'Rancho Dominguez', 'Redondo Beach', 'Rosemead', 'San Bruno', 'San Diego', 'Santa Fe Springs', 'Santa Monica', 'South Pasadena', 'Temecula', 'Topanga', 'Torrance', 'Tustin', 'Universal City', 'Van Nuys', 'Venice', 'Ventura', 'West Covina', 'West Hollywood', 'Westminister', 'Whittier', 'Woodland Hills', 'Yorba Linda', 'Yucca Valley']
-
+let laCities = ['Alameda', 'Alhambra', 'Altadena', 'Anza', 'Arcadia', 'Bakersfield', 'Bellflower', 'Belmont', 'Big Sur', 'Calabasas', 'Canoga Park', 'Capistrano Beach', 'Carson', 'Cerritos', 'Commerse', 'Compton', 'Costa Mesa', 'Cupertino', 'Dana Point', 'Diamond Bar', 'Downey', 'Encino', 'Fairfax', 'Fredmont', 'Fullerton', 'Gilroy', 'Glendora', 'Hawthorne', 'Hollywood', 'Humbolt', 'Irvine', 'Joshua Tree', 'La Canada', 'Laguna Beach', 'Lake Forest', 'Lake Tahoe', 'Malibu', 'Mendocino', 'Napa', 'Newport', 'Newport Beach', 'Oakland', 'Oxnard', 'Orange', 'Ojai', 'Palm Springs', 'Palo Alto', 'Pasadena', 'Playa del Rey', 'Pomona', 'Ramona', 'Rancho Dominguez', 'Redondo Beach', 'Rosemead', 'San Bruno', 'San Diego', 'Santa Fe Springs', 'Santa Monica', 'South Pasadena', 'Temecula', 'Topanga', 'Torrance', 'Tustin', 'Universal City', 'Van Nuys', 'Venice', 'Ventura', 'West Covina', 'West Hollywood', 'Westminister', 'Whittier', 'Woodland Hills', 'Yorba Linda', 'Yucca Valley']
 let atlCities = ["Decatur", "East Atlanta", "East Lake", "Edgewood", "Inman Park", "Kirkwood", "Lake Claire", "Lindridge‑Martin Manor", "Morningside‑Lenox Park", "Old Fourth Ward", "Ormewood Park", "Piedmont Heights", "Poncey-Highland", "Reynoldstown", "Sweet Auburn", "Virginia-Highland"]
-
 let bosCities = ["Melrose", "Brookline", "Newton", "Arlington", "Winchester", "Westborough", "Needham", "Wellesley", "Franklin Town", "Hingham", "Lexington", "Northborough", "Reading", "Dedham", "Norwood", "Kingston", "South Lancaster"]
-
-let chiCities = ["Near North Side", "Lincoln Park", "Lake View", "Near South Side", "West Town", "North Center", "Edison Park", "Lincoln Square", "Near West Side", "Beverly"]
+let chiCities = ["Norville", "Lincolm Park", "Lakd View", "Nead South Side", "Wes Town", "Noth Center", "Edion Park", "Lincln Square", "Wet Side", "Beerly"]
+let dalCities = ["Norf Side", "True Park", "Hot View", "Leertown", "West Town"]
+let denCities = ["South Side", "Jay Park", "Lake Stride", "Creative South Side"]
+let houCities = ["Point Side", "Stein Park", "Lakesreer", "KanyeWest"]
+let lvCities = ["Foreign Side", "House Park", "Yolo View", "Closer South Side", "Westside", "Honda Center"]
+let miaCities = ["PeerSide", "Uline Park", "Crestview", "Lincoln Park", "Ville", "Tanak"]
+let neworlCities = ["Aquafina", "Tooner", "Reert", "N Side", "Connt", "Ner"]
+let nyCities = ["Noide", "Linoln", "Shibuya", "Cons Side", "Weewn", "Starbucks", "Edison", "Stevejobs", "Nexus", "Honey"]
+let sdCities = ["Manhattan", "Central Park", "New Jersey", "Staten Island", "Long Island"]
+let ocCities = ["Stanton", "Scranton", "Buena", "Stenier Park", "Sleeperville", "Northernlights", "Eileen", "Lamertown", "Wooserville", "Sampson"]
+let sfCities = ["San Jose", "Fremont", "Crestside", "Tracy", "Sunnyvale", "Sf Downtown", "Atson", "Yorka", "Crestville", "Destena"]
+let seaCities = ["Seaside", "Lively", "Lakesides", "Horchateoo", "Fake Town", "Helloville", "Eisten"]
 
 let cuisines = ['Italian', 'Japanese', 'Sushi', 'Mexican', 'Taco', 'Burger', 'Pasta', 'Pizza', 'Burrito', 'Ramen', 'Chinese', 'Dumpling', 'Indian', 'Fried Rice', 'Curry', 'Fusion', 'Cajun', 'Soul', 'Greek', 'Thai', 'Lebanese', 'American', 'French', 'Mediterranean', 'Spanish', 'German', 'Korean', 'Korean BBQ', 'BBQ', 'Vietnamese', 'Pho', 'Eggroll', 'Fried Chicken', 'Sandwich', 'Brazillian', 'Yakitori', 'Salad', 'Vegan', 'Vegetarian', 'Peruvian', 'Chicken', 'Dessert', 'Ice Cream', 'Cake', 'Fries', 'Teriyaki', 'Gyro', 'Ribs']
 
@@ -67,6 +75,65 @@ connection.query("INSERT INTO cities (city, metroId) VALUES ?", [bosArr], functi
 });
 
 let chiArr = mapCities(chiCities, 3);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [chiArr], function (err, result) {
+    if (err) { console.log('err', err) }
+    console.log(result);
+});
+
+let dalArr = mapCities(dalCities, 4);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [dalArr], function (err, result) {
+    if (err) { console.log('err', err) }
+    console.log(result);
+});
+
+let denArr = mapCities(denCities, 5);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [denArr], function (err, result) {
+    if (err) { console.log('err', err) }
+    console.log(result);
+});
+
+let houArr = mapCities(houCities, 6);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [houArr], function (err, result) {
+    if (err) { console.log('err', err) }
+    console.log(result);
+});
+
+let lvArr = mapCities(lvCities, 7);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [lvArr], function (err, result) {
+    if (err) { console.log('err', err) }
+    console.log(result);
+});
+let miaArr = mapCities(miaCities, 9);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [miaArr], function (err, result) {
+    if (err) { console.log('err', err) }
+    console.log(result);
+});
+let neworlArr = mapCities(neworlCities, 10);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [neworlArr], function (err, result) {
+    if (err) { console.log('err', err) }
+    console.log(result);
+});
+let nyArr = mapCities(nyCities, 11);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [nyArr], function (err, result) {
+    if (err) { console.log('err', err) }
+    console.log(result);
+});
+let ocArr = mapCities(ocCities, 12);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [ocArr], function (err, result) {
+    if (err) { console.log('err', err) }
+    console.log(result);
+});
+let sfArr = mapCities(sfCities, 13);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [sfArr], function (err, result) {
+    if (err) { console.log('err', err) }
+    console.log(result);
+});
+let sdArr = mapCities(sdCities, 14);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [sdArr], function (err, result) {
+    if (err) { console.log('err', err) }
+    console.log(result);
+});
+let seaArr = mapCities(seaCities, 15);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [chiArr], function (err, result) {
     if (err) { console.log('err', err) }
     console.log(result);

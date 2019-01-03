@@ -31,7 +31,6 @@ const searchForCities = (metro, callback) => {
             callback(err);
         }
         else {
-            console.log('RESULTTT', result)
             callback(null, result);
         }
     })
@@ -40,7 +39,6 @@ const searchForCities = (metro, callback) => {
 
 // Sequelize query (to use promises)
 const queryCategories = (query, callback) => {
-    console.log('its been called bitchhh', query)
     let result = {};
     Cities.findAll({
         where: {

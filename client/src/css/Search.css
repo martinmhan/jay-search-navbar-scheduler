@@ -51,16 +51,14 @@
 }
 .datepickerWrapper{
     position: relative;
-    border: solid;
-    border-color: red;
+    display: flex;
+    flex-direction: column;
 }
 .datepickerSearchContainer{
-    border: solid;
-    border-color: green;
     position: absolute;
     z-index: 6;
     top: 216px;
-    left: -100px;
+    left: 33px;
     border-radius: 4px;
 }
 .datePicker{
@@ -110,7 +108,6 @@
     margin: auto;
 }
 .timePicker select {
-    /* background: transparent; */
     opacity: 0;
     font-size: 14px;
     font: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -220,25 +217,76 @@
     font-weight: 500;
     color: white;
 }
-/* .searchResults{
-
+.searchResults{
+    position: absolute;
+    width: 288px;
+    top: 219px;
+    right: 322px;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: solid;
+    border-width: thin;
+    border-color: #d8d9db;
 }
 .searchHeader{
-
+    padding-left: 50px;
+    width: 75%;
+    border: none;  
+    background: none; 
 }
 .locationResults{
+    flex: 1;
+}
+.searchedSection{
+    border-top: solid;
+    border-width: thin;
+    border-color: #d8d9db;
+}
+.searchCategoryTextContainer{
+    display: flex;
+    margin-top: 20px;
 
+}
+.headerContainerSearch{
+    flex: 1;
+    background-color: white;
+    height: 37px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: auto;
+    width: 100%;
 }
 .searchCategoryText{
-
+    font-size: 13px;
+    font-weight: 550;
 }
 .searchResultText{
-
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 30px;
 }
 .cuisineResults{
-
+    flex: 1;
 }
 .restaurantResults{
-
-} */
-
+    flex: 1;
+}
+.hoverOnSearch{
+    list-style-type: none;
+    padding-top: 5px;
+    padding-bottom: 5px; 
+}
+.hoverOnSearch:hover {
+    background-color: red;
+}
+.searchResultLogo{
+    font-size: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+.ulContainerSearch{
+    padding: 0;
+}

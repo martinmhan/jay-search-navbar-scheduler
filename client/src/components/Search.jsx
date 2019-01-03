@@ -84,7 +84,6 @@ class Search extends React.Component {
                     </div>
                     <div className={style.searchCloseButtonContainer}>
                         <i id="searchButton" onClick={this.state.handleClickTopBar} className={"material-icons" + ' ' + style.closeIcon}>close</i>
-                        {/* cant pass down the clickhandler here either */}
                     </div>
                     <div className={style.searchHeaderMessage}>
                         <h3>

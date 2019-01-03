@@ -1,5 +1,4 @@
-DROP DATABASE IF EXISTS tableit;
-
+c
 CREATE DATABASE tableit;
 
 USE tableit;
@@ -7,7 +6,6 @@ USE tableit;
 CREATE TABLE metros (
   id int NOT NULL AUTO_INCREMENT,
   metro varchar(50) NOT NULL UNIQUE,
-  -- ADD CONSTRAINT myUniqueConstraint UNIQUE(id, metro),
   PRIMARY KEY (id)
 );
 
@@ -15,7 +13,6 @@ CREATE TABLE cities (
   id int NOT NULL AUTO_INCREMENT,
   city varchar(50) NOT NULL UNIQUE,
   metroId int NOT NULL,
-  -- ADD CONSTRAINT myUniqueConstraint UNIQUE(id, city, metroId),
   PRIMARY KEY (id)
 );
 
@@ -37,14 +34,12 @@ CREATE TABLE cities (
 CREATE TABLE restaurants (
   id int NOT NULL UNIQUE AUTO_INCREMENT,
   restaurantName varchar(50) NOT NULL UNIQUE,
-  -- ADD CONSTRAINT myUniqueConstraint UNIQUE(id, restaurantName),
   PRIMARY KEY (id)
 );
 
 CREATE TABLE cuisines (
   id int NOT NULL UNIQUE AUTO_INCREMENT,
   cuisineName varchar(50) NOT NULL UNIQUE,
-  -- ADD CONSTRAINT myUniqueConstraint UNIQUE(id, cuisineName),
   PRIMARY KEY (id)
 );
 

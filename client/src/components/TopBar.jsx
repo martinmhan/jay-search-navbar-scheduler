@@ -34,17 +34,17 @@ class TopBar extends React.Component {
         return (
             <div className={style.topBar}>
                 <div className={style.topContainerS1}>
+                    {enClicked ? <EnDrop /> : <div></div>}
+                    {mobileClicked ? <MobileDrop /> : <div></div>}
                     {searchClicked ? (<Search handleClickTopBar={this.handleClickTopBar} />) : (<div></div>)}
-                    <div>
-                        {mobileClicked ? <MobileDrop /> : <div></div>}
-                    </div>
+
                     <div className={style.topContainerS1Right}>
                         <div className={style.topContainerS1RightS1}>
                             <a href className={style.smallLinksTop}>For Restauranteurs</a>
                         </div>
                         <div className={style.topContainerS1RightS2}>
                             <a href id="mobile" onClick={this.handleClickTopBar} className={style.smallLinksTop}>Mobile</a>
-                            <i className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
+                            <i id="mobile" onClick={this.handleClickTopBar} className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
                         </div>
                         <div className={style.topContainerS1RightS3}>
                             <a href className={style.smallLinksTop}>Help</a>
@@ -52,8 +52,7 @@ class TopBar extends React.Component {
                         <div className={style.topContainerS1RightS4}>
                             <i className={"material-icons" + ' ' + style.topBarLogos}>language</i>
                             <a href id="en" onClick={this.handleClickTopBar} className={style.smallLinksTop}>EN</a>
-                            {enClicked ? <EnDrop /> : <div></div>}
-                            <i className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
+                            <i id="en" onClick={this.handleClickTopBar} className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
                         </div>
                     </div>
                 </div>
