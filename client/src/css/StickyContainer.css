@@ -4,16 +4,18 @@
     margin-right: auto;
     height: 100%;
     position: relative;
-    border: solid red;
+    border: solid;
+    border-width: thick;
+    border-color: red;
 }
 .containerContent{
     height: 80%;
     max-width: 640px;
     height: 100%;
     position: absolute;
-    top: -60px;
+    top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 0;
     /* margin: auto; */
     border: solid green;
 
@@ -29,6 +31,8 @@
     display: flex;
     align-items: flex-start;
     margin: auto; 
+    border: solid;
+    border-color: purple;
 }
 .content{
     position: sticky;
@@ -57,11 +61,11 @@
     border-bottom: solid #333;
     border-width: thin;
     background-color: white;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 .appMovingNavBar{
-    position: sticky;
-    top: 0;
+    /* position: sticky;
+    top: 0; */
     display: flex;
     flex-grow: 2;
     float: left;
@@ -105,13 +109,12 @@
 }
 .appReservationContainer{
     position: sticky;
-    top: -60px;
+    top: 0;
     width: 320px;
     min-height: 400px;
     background-color: white;
     display: flex;
     flex-direction: column;
-    z-index: 5;
     /* flex-flow: wrap; */
 }
 .appReservation{
@@ -250,7 +253,7 @@
     left: 0;
     z-index: 1;
     flex-direction: column;
-}
+} 
 .timePickerHeader{
     flex: 1;
 }
@@ -286,14 +289,14 @@
     border-bottom: solid;
     border-width: thin;
 }
-/* .appReserationTime{
+.appReserationTime{
     flex-basis: 45%;
     border: solid;
     justify-content: flex-start;
     border-bottom: solid;
     border-width: thin;
     background-color: white;
-}    */
+}   
 /* .timePicker{
 
 } */
