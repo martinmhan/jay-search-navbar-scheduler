@@ -96,10 +96,6 @@
     padding: 14px 0 14px 0;
     border-bottom:3px solid red;
 }
-/* .navBarText{
-    font-size: 14px;
-    font-weight: 500;
-}   */
 
 .reservationCal{
     position: absolute;
@@ -205,14 +201,8 @@
 .partyCounter{
     margin: auto;
 }
-/* .selectPartyCount{
 
-} */
-/* .optionValue{
-    
-} */
 .appReservationTimeAndDate{
-    /* display: inline-block; */
     height: 65px;
     display: flex;
     flex-basis: 90%;
@@ -227,18 +217,14 @@
 }
 
 .arrowDownLogo{
-    /* flex: 1; */
     justify-content: flex-end;
     font-size: 14px;
     margin-right: 0px;
 }
 
 .timePicker{
-    /* width: 160px; */
-    /* height: 48px; */
     flex: 1;
     min-width: 140px;
-    /* justify-content: flex-start; */
     position: relative;
     display: flex;
     border-bottom: solid;
@@ -291,15 +277,11 @@
 .appReservationDate{
     width: 140px;
     flex: 1;
-    /* justify-content: flex-start; */
     border-bottom: solid;
     border-width: thin;
     border-color: #d8d9db;
 }
 
-/* .selectTime{
-
-} */
 .appDatePickerButton{
     margin: auto;
     font-size: 14px;
