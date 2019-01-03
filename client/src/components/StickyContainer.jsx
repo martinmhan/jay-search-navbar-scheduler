@@ -52,7 +52,6 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
         })
     }
     handleClickedOnDate(date) {
-        console.log(date, "DATE")
         this.setState({
             clickedOnDate: date
         })
@@ -252,10 +251,10 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
                         </div>
                         <div className={style.appReservationSaveButtonContainer}>
                             <div className={style.saveButtonWrapper}>
-                                <a href className={style.saveRestaurantButton}>
-                                    <i className={"material-icons" + ' ' + style.appReservationBookingLogo}>bookmark_border</i>
-                                    Save this restaurant
-                                </a>
+                                <div className={style.saveRestaurantButton}>
+                                    <i className={"material-icons" + ' ' + style.appReservationSaveLogo}>bookmark_border</i>
+                                    <div className={style.saveRestaurantButtonText}>Save this restaurant</div>
+                                </div>
                             </div>
                         </div>
                     </div>

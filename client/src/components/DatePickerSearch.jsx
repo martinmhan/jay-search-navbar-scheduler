@@ -7,7 +7,8 @@ class DatePickerSearch extends React.Component {
         super(props);
         this.state = {
             currentMonth: new Date(),
-            selectedDate: new Date()
+            selectedDate: new Date(),
+            handleDaySelection: this.props.handleDaySelection
         };
         this.onDateClick = this.onDateClick.bind(this);
         this.nextMonth = this.nextMonth.bind(this);
@@ -19,15 +20,15 @@ class DatePickerSearch extends React.Component {
 
         return (
             <div className={style.header + ' ' + style.row + ' ' + style.flexmiddle}>
-                <div className={style.col + ' ' + style.colstart}>
+                <div className={style.leftChevIcon + ' ' + style.colstart}>
                     <div className={style.icon} onClick={this.prevMonth}>
                         chevron_left
-            </div>
+                    </div>
                 </div>
-                <div className={style.col + ' ' + style.colcenter}>
-                    <span>{dateFns.format(this.state.currentMonth, dateFormat)}</span>
+                <div className={style.middleHeader + ' ' + style.colcenter}>
+                    <span className={style.headerSpan}>{dateFns.format(this.state.currentMonth, dateFormat)}</span>
                 </div>
-                <div className={style.col + ' ' + style.colend} onClick={this.nextMonth}>
+                <div className={style.rightChevIcon + ' ' + style.colend} onClick={this.nextMonth}>
                     <div className={style.icon}>chevron_right</div>
                 </div>
             </div>
@@ -35,7 +36,7 @@ class DatePickerSearch extends React.Component {
     }
 
     renderDays() {
-        const dateFormat = "dddd";
+        const dateFormat = "ddd";
         const days = [];
 
         let startDate = dateFns.startOfWeek(this.state.currentMonth);
@@ -47,7 +48,6 @@ class DatePickerSearch extends React.Component {
                 </div>
             );
         }
-
         return <div className={style.days + ' ' + style.row}>{days}</div>;
     }
 
@@ -65,7 +65,7 @@ class DatePickerSearch extends React.Component {
         let day = startDate;
         let formattedDate = "";
 
-        while (day <= endDate) {
+        while (rows.length <= 5) {
             for (let i = 0; i < 7; i++) {
                 formattedDate = dateFns.format(day, dateFormat);
                 const cloneDay = day;
@@ -78,16 +78,17 @@ class DatePickerSearch extends React.Component {
                                 : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
                             }`}
                         key={day}
-                        onClick={() => this.onDateClick(dateFns.parse(cloneDay))}
+                        onClick={() => this.onDateClick(dateFns.parse(cloneDay))
+                        }
                     >
                         <span className={style.number}>{formattedDate}</span>
                         <span className={style.bg}>{formattedDate}</span>
-                    </div>
+                    </div >
                 );
                 day = dateFns.addDays(day, 1);
             }
             rows.push(
-                <div className={style.row} key={day}>
+                <div className={style.row} key={day} >
                     {days}
                 </div>
             );
@@ -97,7 +98,8 @@ class DatePickerSearch extends React.Component {
     }
 
     onDateClick(day) {
-        this.props.handleDaySelection(day);
+        let convertedDay = dateFns.format(day, 'ddd, M/D')
+        this.state.handleClickedOnDate(convertedDay);
         this.setState({
             selectedDate: day
         });

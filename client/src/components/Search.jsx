@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import style from '../css/Search.css';
 import DatePickerSearch from './DatePickerSearch.jsx';
+import { timingSafeEqual } from 'crypto';
+import SearchResults from './SearchResults.jsx';
 
 
 
@@ -23,7 +25,7 @@ class Search extends React.Component {
         this.handleSelect = this.handleSelect.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleClickSearch = this.handleClickSearch.bind(this);
-        // this.handleDaySelection = this.handleDaySelection.bind(this);
+        this.handleDaySelection = this.handleDaySelection.bind(this);
     }
     handleInput(e) {
         this.setState({
@@ -51,20 +53,17 @@ class Search extends React.Component {
         })
     }
     handleClickSearch(e) {
-
         let name = e.target.id;
-        console.log(name)
         this.setState({
             [name]: !this.state[name]
         })
     }
-    // handleDaySelection(day) {
-    //     this.setState({
-    //         selectedDay: day
-    //     })
-    // }
+    handleDaySelection(day) {
+        this.setState({
+            selectedDay: day
+        })
+    }
     handleSelect(e) {
-        console.log(e.target.value)
         let value = e.target.value;
         let name = e.target.id;
         this.setState({
@@ -72,16 +71,17 @@ class Search extends React.Component {
         })
     }
     render() {
-        let cityMatch = this.state.cityMatch;
-        let cuisineMatch = this.state.cuisineMatch;
-        let restaurantMatch = this.state.restaurantMatch;
+
         let datePickerSearch = this.state.datePickerSearch;
-        console.log('handleClickSearch', this.handleClickSearch)
         return (
             <div>
                 <div className={style.searchContainer}>
-                    {datePickerSearch ? <DatePickerSearch handleClickSearch={this.handleClickSearch} handleDaySelection={this.handleDaySelection} /> : <div></div>}
-
+                    <div className={style.datepickerWrapper}>
+                        {this.state.text.length > 1 ? <SearchResults text={this.state.text} cityMatch={this.state.cityMatch} cuisineMatch={this.state.cuisineMatch} restaurantMatch={this.state.restaurantMatch} /> : <div></div>}
+                        <div className={style.datepickerSearchContainer}>
+                            {datePickerSearch ? <DatePickerSearch handleClickSearch={this.handleClickSearch} handleDaySelection={this.handleDaySelection} /> : <div></div>}
+                        </div>
+                    </div>
                     <div className={style.searchCloseButtonContainer}>
                         <i id="searchButton" onClick={this.state.handleClickTopBar} className={"material-icons" + ' ' + style.closeIcon}>close</i>
                         {/* cant pass down the clickhandler here either */}
@@ -94,9 +94,9 @@ class Search extends React.Component {
                     <div className={style.searchBottomComponents}>
                         <div className={style.pickerContainer}>
                             <div className={style.datePicker} id="datePickerSearch" onClick={this.handleClickSearch}>
-                                <i className={"material-icons" + ' ' + style.searchDropLogo}>calendar_today</i>
-                                <div className={style.datePickerInput}>{this.state.selectedDay}</div>
-                                <i className={"material-icons" + ' ' + style.searchDropLogo}>keyboard_arrow_down</i>
+                                <i id="datePickerSearch" onClick={this.handleClickSearch} className={"material-icons" + ' ' + style.searchDropLogo}>calendar_today</i>
+                                <div id="datePickerSearch" onClick={this.handleClickSearch} className={style.datePickerInput}>{this.state.selectedDay}</div>
+                                <i id="datePickerSearch" onClick={this.handleClickSearch} className={"material-icons" + ' ' + style.searchDropLogo}>keyboard_arrow_down</i>
                             </div>
                             <div className={style.timePicker}>
                                 <div class={style.customSelectTime}>
@@ -197,27 +197,6 @@ class Search extends React.Component {
                             <button className={style.searchFindTableButton}>Find a Table</button>
                         </div>
 
-                        {/* <div className={style.searchResults}>
-                            <header className={style.searchHeader}>search: "{this.state.text}"</header>
-                            {cityMatch.length !== 0 ? <div className={style.locationResults}>
-                                <div className={style.searchCategoryText}>Locations</div>
-                                <ul>
-                                    {this.state.cityMatch.map(locaMatch => <li><a href className={style.searchResultText}>{locaMatch.city}</a></li>)}
-                                </ul>
-                            </div> : <div></div>}
-                            {cuisineMatch.length !== 0 ? <div className={style.cuisinesResults}>
-                                <div className={style.searchCategoryText}>Cuisines</div>
-                                <ul>
-                                    {this.state.cuisineMatch.map(cuisMatch => <li><a href className={style.searchResultText}>{cuisMatch.cuisineName}</a></li>)}
-                                </ul>
-                            </div> : <div></div>}
-                            {restaurantMatch.length !== 0 ? <div className={style.restaurantResults}>
-                                <div className={style.searchCategoryText}>Restaurants</div>
-                                <ul>
-                                    {this.state.restaurantMatch.map(restMatch => <li><a href class="font searchResultText">{restMatch.restaurantName}</a></li>)}
-                                </ul>
-                            </div> : <div></div>}
-                        </div> */}
                     </div>
                 </div>
             </div >

@@ -49,6 +49,20 @@
     border-color: #f7f7f7; 
     border: 0.5px solid;
 }
+.datepickerWrapper{
+    position: relative;
+    border: solid;
+    border-color: red;
+}
+.datepickerSearchContainer{
+    border: solid;
+    border-color: green;
+    position: absolute;
+    z-index: 6;
+    top: 216px;
+    left: -100px;
+    border-radius: 4px;
+}
 .datePicker{
     width: 160px;
     height: 48px;
