@@ -7,7 +7,7 @@
     background-color: white;
     top: 30px;
     right: 0px;
-    z-index: 3;
+    z-index: 8;
 }
 .searchCloseButtonContainer{
     width: 100%;
@@ -222,7 +222,7 @@
     width: 288px;
     top: 219px;
     right: 322px;
-    z-index: 6;
+    z-index: 8;
     display: flex;
     flex-direction: column;
     background-color: white;
