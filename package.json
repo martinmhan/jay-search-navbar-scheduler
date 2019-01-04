@@ -6,6 +6,7 @@
     "test": "jest --detectOpenHandles",
     "start": "nodemon server/index.js",
     "build": "webpack -d --watch",
+    "createdb": "mysql -u root < schema.sql",
     "seed": "node database/seed.js"
   },
   "repository": {
