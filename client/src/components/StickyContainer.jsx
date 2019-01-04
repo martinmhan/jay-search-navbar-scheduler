@@ -3,10 +3,9 @@ import style from '../css/StickyContainer.css';
 import DatePickerReservation from './DatePickerReservation.jsx';
 import * as Scroll from 'react-scroll';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import { isTuesday } from 'date-fns';
 
 
-class StickyContainer extends React.Component { // Hover buggy go back and check 
+class StickyContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -71,31 +70,7 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
 
     render() {
         return (
-            // <div className="overlayContainerSticky">
             <div className={style.containerSticky}>
-                <div className={style.containerContent}>
-                    <div className={style.content}>
-                        <div id="overview" name="overview" className={style.testDummyText}>
-                            TESTING
-                        </div>
-                        <div id="photos">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit vel quae neque non veniam, natus eius pariatur odit, sed consequatur recusandae blanditiis minus eos laborum deleniti repellat numquam reiciendis ullam.
-                        </div>
-                        <div id="menu" className={style.testDummyPara}>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime consectetur, voluptates quis est, iste impedit sequi perspiciatis beatae mollitia quasi sit ratione saepe repellendus excepturi quas, soluta eaque dolorem! Dolorum, veritatis dolores, eos quo inventore suscipit tempora explicabo debitis quae recusandae itaque est voluptates veniam, nostrum dolor! Assumenda, quod dolor!
-                        </div>
-                        <div id="specials" className={style.testDummyPara}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem id debitis non tenetur laboriosam delectus velit voluptatibus quasi nobis, culpa illo eos quas ipsa quae enim neque exercitationem nisi consequatur?
-                        </div>
-                        <div id="reviews" className={style.testDummyPara}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sit, laboriosam pariatur veniam dolorum laudantium animi mollitia reiciendis impedit amet eaque nihil odio quo magni, iusto distinctio in corporis aperiam rerum nostrum fugit? Qui, assumenda est doloremque voluptatem impedit ad.
-                        </div>
-                        <div id="twitter" className={style.testDummyPara}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nulla dignissimos doloremque cum eaque rerum? Veniam, nostrum magni tempore tempora quos tenetur commodi deserunt! Quo veniam earum sapiente accusamus et?
-                        </div>
-
-                    </div>
-                </div>
                 <div className={style.containerStickyComponents}>
                     <div className={style.appMovingNavBarContainer}>
                         <div className={style.appMovingNavBar}>
@@ -260,7 +235,6 @@ class StickyContainer extends React.Component { // Hover buggy go back and check
                     </div>
                 </div>
             </div>
-            // </div>
         )
     }
 }
