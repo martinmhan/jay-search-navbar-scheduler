@@ -10,9 +10,9 @@
     height: 100%;
     max-width: 992px;
     position: absolute;
-    top: 0;
+    top: -51px;
     left: 0;
-    z-index: 1;
+    z-index: 3;
     display: flex;
     align-items: flex-start;
     margin: auto; 
@@ -42,6 +42,7 @@
 }
 .appMovingNavBarList{
     padding: 0;
+    margin-left: 20px;
 }
 .appMovingNavBarList li{
     list-style: none;
@@ -49,13 +50,15 @@
     font-size: 14px;
     font-weight: 500;
     background-color: white;
+    margin-right: 15px;
+    padding-bottom: 14px;
 }
 .appMovingNavBarListHeader{
-    padding-right: 14px;
+    /* padding-right: 14px .5rem; */
     flex-direction: row;
 }
 .appMovingNavBarListHeader:hover{
-    padding: 14px .5rem;
+    /* padding: 14px .5rem; */
     flex-direction: row;
     color:#F38A8A;
     border-bottom:3px solid red;
