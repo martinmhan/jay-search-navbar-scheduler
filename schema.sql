@@ -1,4 +1,4 @@
-c
+
 CREATE DATABASE tableit;
 
 USE tableit;
