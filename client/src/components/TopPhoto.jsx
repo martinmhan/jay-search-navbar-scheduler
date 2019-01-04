@@ -4,7 +4,7 @@ import style from '../css/TopBar.css';
 const TopPhoto = (props) => {
     return (
         <div className={style.topContainerS4}>
-            <img className={style.appHeaderPhoto} src={"https://s3-us-west-1.amazonaws.com/table-it/Blue-Ribbon-5--Anthony-Mair-for-Maison.jpg"} />
+            <img className={style.appHeaderPhoto} src={"https://s3-us-west-1.amazonaws.com/table-it/alcohol-architecture-bar-260922.jpg"} />
         </div>
     )
 }
