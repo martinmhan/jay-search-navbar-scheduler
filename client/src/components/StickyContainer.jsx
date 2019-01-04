@@ -71,6 +71,13 @@ class StickyContainer extends React.Component {
     render() {
         return (
             <div className={style.containerSticky}>
+                <div className={style.containerStickyComponentTop}>
+                    <div className={style.containerContent}>
+                        <div id="restaurantdetails"></div>
+                        <div id="photosmenu"></div>
+                        <div id="restaurantreviews"></div>
+                    </div>
+                </div>
                 <div className={style.containerStickyComponents}>
                     <div className={style.appMovingNavBarContainer}>
                         <div className={style.appMovingNavBar}>
@@ -79,25 +86,21 @@ class StickyContainer extends React.Component {
                                     <Link activeClass="active" to="overview" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
                                         onSetInactive={this.handleSetInactive} className={this.state.overview === true ? style.active : ''}>Overview</Link>
                                 </li>
-                                <li id="photos" className={style.appMovingNavBarListHeader}>
-                                    <Link activeClass="active" to="photos" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
+                                <li id="photosmenu" className={style.appMovingNavBarListHeader}>
+                                    <Link activeClass="active" to="photosmenu" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
                                         onSetInactive={this.handleSetInactive} className={this.state.photos === true ? style.active : ''}>Photos</Link>
                                 </li>
-                                <li id="menu" className={style.appMovingNavBarListHeader}>
-                                    <Link activeClass="active" to="menu" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
+                                <li id="photosmenu" className={style.appMovingNavBarListHeader}>
+                                    <Link activeClass="active" to="photosmenu" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
                                         onSetInactive={this.handleSetInactive} className={this.state.menu === true ? style.active : ''}>Menu</Link>
                                 </li>
-                                <li id="specials" className={style.appMovingNavBarListHeader}>
-                                    <Link activeClass="active" to="specials" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
+                                <li id="photosmenu" className={style.appMovingNavBarListHeader}>
+                                    <Link activeClass="active" to="photosmenu" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
                                         onSetInactive={this.handleSetInactive} className={this.state.specials === true ? style.active : ''}>Specials</Link>
                                 </li>
-                                <li id="reviews" className={style.appMovingNavBarListHeader}>
-                                    <Link activeClass="active" to="reviews" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
+                                <li id="restaurantreviews" className={style.appMovingNavBarListHeader}>
+                                    <Link activeClass="active" to="restaurantreviews" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
                                         onSetInactive={this.handleSetInactive} className={this.state.reviews === true ? style.active : ''}>Reviews</Link>
-                                </li>
-                                <li id="twitter" className={style.appMovingNavBarListHeader}>
-                                    <Link activeClass="active" to="twitter" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
-                                        onSetInactive={this.handleSetInactive} className={this.state.twitter === true ? style.active : ''}>Twitter</Link>
                                 </li>
                             </ul>
                         </div>

@@ -18,17 +18,17 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: [
-                    { loader: "style-loader" },
-                    {
-                        loader: "css-loader",
-                        options: {
-                            modules: true,
-                            localIdentName: '[name]_[hash:base64]'
-                        }
-                    }
-                ]
-            }
+                loader: 'style-loader',
+            },
+            {
+                test: /\.css$/,
+                loader: 'css-loader',
+                include: path.join(__dirname, 'client'),
+                query: {
+                    modules: true,
+                    localIdentName: '[name]__[local]__[hash:base64:5]',
+                },
+            },
         ]
     },
     externals: {

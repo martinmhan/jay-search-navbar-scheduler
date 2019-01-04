@@ -5,18 +5,40 @@
     height: 100%;
     position: relative;
 }
+.containerStickyComponentTop{
+    position: absolute;
+    top: -54px;
+    left: 0;
+    z-index: 3;
+    border: solid purple;
+    width: 640px;
+    max-width: 640px;
+
+}
+.containerContent{
+    height: 90%;
+    max-width: 640px;
+    /* height: 100%; */
+    position: sticky;
+    top: 0px;
+    /* padding-bottom: 50px; */
+    /* left: 0; */
+    z-index: 3;
+    border: solid green;
+}
 
 .containerStickyComponents{
+    
     height: 100%;
     max-width: 992px;
     position: absolute;
-    top: -51px;
+    top: -54px;
     left: 0;
     z-index: 3;
     display: flex;
     align-items: flex-start;
     margin: auto; 
-
+    border: solid red;
 }
 
 .appMovingNavBarContainer{
@@ -27,6 +49,7 @@
     flex-direction: column;
     max-width: 640px;
     width: 640px;
+    z-index: 5;
     box-sizing: border-box;
     margin: 0 2rem 0 0; 
     border-bottom: solid #d8d9db;
