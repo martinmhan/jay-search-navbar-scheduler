@@ -2,7 +2,6 @@ const { searchForCities, queryCategories } = require('../database/dbHelpers.js')
 
 const getCities = (req, res) => {
     const metro = req.params.metro;
-    console.log(metro, "METROROOO")
     searchForCities(metro, (err, data) => {
         if (err) {
             res.status(404).send(err)
