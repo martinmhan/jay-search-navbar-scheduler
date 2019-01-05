@@ -93,6 +93,9 @@ text-align: left;
 .colcenter {
 justify-content: center;
 text-align: center;
+font-size: 13px;
+font-weight: 300;
+margin-bottom: 9px;
 }
 
 .colend {
@@ -103,7 +106,7 @@ text-align: right;
 .calendar {
 display: block;
 position: relative;
-width: 292px;
+width: 254px;
 height: 304px;
 background: #f1f2f4;
 border: 1px solid #d8d9db;
@@ -115,11 +118,13 @@ font-weight: 700;
 margin-top: 15px;
 width: 100%;
 font-size: 16px;
-padding: 0.5rem 0 1rem 0;
+padding: 0.5rem 0 0.5rem 0;
 }
 
 .headerSpan{
 display: inline-block;
+font-size: 16px;
+font-weight: 550;
 }
 
 .calendar .header .icon:first-of-type {
@@ -162,7 +167,7 @@ border-color: red;
 font-size: 16px;
 line-height: 1;
 margin: auto;
-font-weight: 700;
+font-weight: 540;
 }
 
 .calendar .body .disabled {

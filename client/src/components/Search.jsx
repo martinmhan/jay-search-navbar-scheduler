@@ -77,7 +77,7 @@ class Search extends React.Component {
             <div>
                 <div className={style.searchContainer}>
                     <div className={style.datepickerWrapper}>
-                        {this.state.text.length > 1 ? <SearchResults text={this.state.text} cityMatch={this.state.cityMatch} cuisineMatch={this.state.cuisineMatch} restaurantMatch={this.state.restaurantMatch} /> : <div></div>}
+                        {/* {this.state.text.length > 1 ? <SearchResults text={this.state.text} cityMatch={this.state.cityMatch} cuisineMatch={this.state.cuisineMatch} restaurantMatch={this.state.restaurantMatch} /> : <div></div>} */}
                         <div className={style.datepickerSearchContainer}>
                             {datePickerSearch ? <DatePickerSearch handleClickSearch={this.handleClickSearch} handleDaySelection={this.handleDaySelection} /> : <div></div>}
                         </div>
@@ -186,6 +186,8 @@ class Search extends React.Component {
                             </div>
                         </div>
                         <div className={style.searchBar}>
+                            {this.state.text.length > 1 ? <SearchResults text={this.state.text} cityMatch={this.state.cityMatch} cuisineMatch={this.state.cuisineMatch} restaurantMatch={this.state.restaurantMatch} /> : <div></div>}
+
                             <div className={style.customSearchBar}>
                                 <i className={"material-icons" + ' ' + style.searchDropLogo}>search</i>
                             </div>

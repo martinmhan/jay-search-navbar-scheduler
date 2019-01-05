@@ -207,6 +207,7 @@
 }
 .S2S3buttonContainer{
     width: 40%;
+    min-width: 77px;
     display: flex;
 }
 

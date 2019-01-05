@@ -82,8 +82,8 @@ class StickyContainer extends React.Component {
                     <div className={style.appMovingNavBarContainer}>
                         <div className={style.appMovingNavBar}>
                             <ul id="movingNavBar" className={style.appMovingNavBarList}>
-                                <li id="overview" className={style.appMovingNavBarListHeader}>
-                                    <Link activeClass="active" to="overview" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
+                                <li id="restaurantdetails" className={style.appMovingNavBarListHeader}>
+                                    <Link activeClass="active" to="restaurantdetails" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
                                         onSetInactive={this.handleSetInactive} className={this.state.overview === true ? style.active : ''}>Overview</Link>
                                 </li>
                                 <li id="photosmenu" className={style.appMovingNavBarListHeader}>

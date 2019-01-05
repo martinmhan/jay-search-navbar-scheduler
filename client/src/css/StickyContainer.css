@@ -1,4 +1,5 @@
 .containerSticky{
+    display: flex;
     max-width: 992px;
     margin-left: auto;
     margin-right: auto;
@@ -6,25 +7,21 @@
     position: relative;
 }
 .containerStickyComponentTop{
-    position: absolute;
     top: -54px;
     left: 0;
-    z-index: 3;
-    border: solid purple;
-    width: 640px;
+    /* z-index: 3; */
+    width: 700x;
     max-width: 640px;
 
 }
 .containerContent{
-    height: 90%;
+    height: 100%;
     max-width: 640px;
-    /* height: 100%; */
     position: sticky;
     top: 0px;
     /* padding-bottom: 50px; */
     /* left: 0; */
     z-index: 3;
-    border: solid green;
 }
 
 .containerStickyComponents{
@@ -32,13 +29,12 @@
     height: 100%;
     max-width: 992px;
     position: absolute;
-    top: -54px;
+    top: -51px;
     left: 0;
-    z-index: 3;
+    /* z-index: 3; */
     display: flex;
     align-items: flex-start;
     margin: auto; 
-    border: solid red;
 }
 
 .appMovingNavBarContainer{
@@ -95,8 +91,8 @@
 
 .reservationCal{
     position: absolute;
-    left: 0px;
-    top: 200px;
+    left: 14px;
+    top: 184px;
     z-index: 3;
 }
 .appReservationContainer{
@@ -359,5 +355,6 @@
     font-size: 14px;
     font-weight: 500;
     width: 170px;
+    padding-top: 2px;
 }
 

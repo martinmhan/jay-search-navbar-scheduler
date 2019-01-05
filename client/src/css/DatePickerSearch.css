@@ -8,6 +8,7 @@ letter-spacing: normal;
 word-wrap: normal;
 color: red;
 direction: ltr;
+font-size: 26px;
 }
 
 .body {
@@ -25,7 +26,6 @@ display: block;
 width: 100%;
 height: 15%;
 padding: 0.5em 0;
-border-bottom: 1px solid #333;
 background: white;
 }
 
@@ -92,6 +92,10 @@ text-align: left;
 .colcenter {
 justify-content: center;
 text-align: center;
+font-size: 14px;
+font-weight: 300;
+padding: 0 0 8px 0;
+text-transform: uppercase;
 }
 
 .colend {
@@ -102,7 +106,7 @@ text-align: right;
 .calendar {
 display: block;
 position: relative;
-width: 352px;
+width: 331px;
 height: 291px;
 background-color: white;
 border: 1px solid #d8d9db;
@@ -112,6 +116,7 @@ padding: 0 18px 0;
 .calendar .header {
 font-weight: 700;
 margin-top: 15px;
+height: 30px;
 width: 100%;
 font-size: 16px;
 /* padding: 0.5rem 0 1rem 0; */
@@ -119,6 +124,7 @@ font-size: 16px;
 
 .headerSpan{
 display: inline-block;
+font-weight: 400;
 }
 
 
@@ -163,7 +169,7 @@ border-color: red;
 font-size: 16px;
 line-height: 1;
 margin: auto;
-font-weight: 700;
+font-weight: 500;
 }
 
 .calendar .body .disabled {

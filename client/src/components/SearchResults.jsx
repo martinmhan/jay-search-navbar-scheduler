@@ -8,7 +8,7 @@ const SearchResults = (props) => {
     let restaurantMatch = props.restaurantMatch;
     return (
         <div className={style.searchResults}>
-            <div className={style.headerContainerSearch + ' ' + style.hoverOnSearch}>
+            <div className={style.headerContainerSearch}>
                 <header className={style.searchHeader}>search: "{props.text}"</header>
             </div>
             <div className={style.searchedSection}>
