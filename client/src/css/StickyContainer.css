@@ -79,14 +79,15 @@
 .appMovingNavBarListHeader:hover{
     /* padding: 14px .5rem; */
     flex-direction: row;
-    color:#F38A8A;
-    border-bottom:3px solid red;
+    color:#da3743;
+    border-bottom:3px solid #da3743;
 }
 
 .active {
-    color:#F38A8A;
+    /* color:#e05e5a; */
+    color: #d53b41;
     padding: 14px 0 14px 0;
-    border-bottom:3px solid red;
+    border-bottom:3px solid #da3743;
 }
 
 .reservationCal{

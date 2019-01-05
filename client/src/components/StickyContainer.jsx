@@ -10,10 +10,10 @@ class StickyContainer extends React.Component {
         super(props);
         this.state = {
             overview: false,
-            photos: false,
-            menu: false,
-            specials: false,
-            reviews: false,
+            restaurantphotos: false,
+            restaurantmenu: false,
+            restaurantspecials: false,
+            restaurantreviews: false,
             twitter: false,
             reservationCal: false,
             clickedOnDate: "Tue, 2/19",
@@ -84,23 +84,23 @@ class StickyContainer extends React.Component {
                             <ul id="movingNavBar" className={style.appMovingNavBarList}>
                                 <li id="restaurantdetails" className={style.appMovingNavBarListHeader}>
                                     <Link activeClass="active" to="restaurantdetails" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
-                                        onSetInactive={this.handleSetInactive} className={this.state.overview === true ? style.active : ''}>Overview</Link>
+                                        onSetInactive={this.handleSetInactive} className={this.state.restaurantdetails === true ? style.active : ''}>Overview</Link>
                                 </li>
-                                <li id="photosmenu" className={style.appMovingNavBarListHeader}>
-                                    <Link activeClass="active" to="photosmenu" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
-                                        onSetInactive={this.handleSetInactive} className={this.state.photos === true ? style.active : ''}>Photos</Link>
+                                <li id="restaurantphotos" className={style.appMovingNavBarListHeader}>
+                                    <Link activeClass="active" to="restaurantphotos" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
+                                        onSetInactive={this.handleSetInactive} className={this.state.restaurantphotos === true ? style.active : ''}>Photos</Link>
                                 </li>
-                                <li id="photosmenu" className={style.appMovingNavBarListHeader}>
-                                    <Link activeClass="active" to="photosmenu" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
-                                        onSetInactive={this.handleSetInactive} className={this.state.menu === true ? style.active : ''}>Menu</Link>
+                                <li id="restaurantmenu" className={style.appMovingNavBarListHeader}>
+                                    <Link activeClass="active" to="restaurantmenu" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
+                                        onSetInactive={this.handleSetInactive} className={this.state.restaurantmenu === true ? style.active : ''}>Menu</Link>
                                 </li>
-                                <li id="photosmenu" className={style.appMovingNavBarListHeader}>
-                                    <Link activeClass="active" to="photosmenu" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
-                                        onSetInactive={this.handleSetInactive} className={this.state.specials === true ? style.active : ''}>Specials</Link>
-                                </li>
+                                {/* <li id="restaurantspecials" className={style.appMovingNavBarListHeader}>
+                                    <Link activeClass="active" to="restaurantspecials" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
+                                        onSetInactive={this.handleSetInactive} className={this.state.restaurantspecials === true ? style.active : ''}>Specials</Link>
+                                </li> */}
                                 <li id="restaurantreviews" className={style.appMovingNavBarListHeader}>
                                     <Link activeClass="active" to="restaurantreviews" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
-                                        onSetInactive={this.handleSetInactive} className={this.state.reviews === true ? style.active : ''}>Reviews</Link>
+                                        onSetInactive={this.handleSetInactive} className={this.state.restaurantreviews === true ? style.active : ''}>Reviews</Link>
                                 </li>
                             </ul>
                         </div>
