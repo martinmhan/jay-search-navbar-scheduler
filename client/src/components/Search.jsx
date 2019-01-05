@@ -33,7 +33,7 @@ class Search extends React.Component {
         }, () => {
             if (this.state.text.length > 1) {
                 let searched = this.state.text;
-                axios.get(`/api/search/${searched}`)
+                axios.get(`http://18.188.173.143:9004/api/search/${searched}`)
                     .then(data => {
                         let result = data.data;
                         this.setState({

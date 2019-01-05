@@ -19,19 +19,6 @@ class Nav extends React.Component {
     }
     handleSelection(e) {
         let selectedMetro = e.target.innerHTML;
-        // selectedMetro = selectedMetro.slice(1, selectedMetro.length);
-        // let removeIndex = selectedMetro.indexOf("/");
-        // if (removeIndex > 0) {
-        //     let split = selectedMetro.split('')
-        //     split.splice(removeIndex, 1);
-        //     split.join(' ')
-        //     let context = this;
-        //     this.setState({
-        //         currentMetro: split
-        //     }, () => {
-        //         context.getCities();
-        //     })
-        // } else {
         let context = this;
         this.setState({
             currentMetro: selectedMetro
@@ -42,8 +29,7 @@ class Nav extends React.Component {
 
     getCities() {
         let metro = this.state.currentMetro;
-        axios.get(`/api/nav/${metro}`)
-            // axios.get(`http://127.0.0.1:9004/api/nav/${metro}`)
+        axios.get(`http://18.188.173.143:9004/api/nav/${metro}`)
             .then(data => {
                 let result = data.data;
                 this.setState({
