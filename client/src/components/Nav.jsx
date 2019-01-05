@@ -42,7 +42,8 @@ class Nav extends React.Component {
 
     getCities() {
         let metro = this.state.currentMetro;
-        axios.get(`http://127.0.0.1:9004/api/nav/${metro}`)
+        axios.get(`/api/nav/${metro}`)
+            // axios.get(`http://127.0.0.1:9004/api/nav/${metro}`)
             .then(data => {
                 let result = data.data;
                 this.setState({
