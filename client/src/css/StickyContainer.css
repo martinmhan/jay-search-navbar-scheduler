@@ -78,6 +78,7 @@
 }
 .appMovingNavBarListHeader:hover{
     /* padding: 14px .5rem; */
+    cursor: pointer;
     flex-direction: row;
     color:#da3743;
     border-bottom:3px solid #da3743;

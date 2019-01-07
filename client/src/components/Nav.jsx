@@ -54,16 +54,16 @@ class Nav extends React.Component {
                 </div>
                 <div className={style.midLocationNav}>
                     <div className={style.leftMidLocationNav}>
-                        <div className={style.regionCityList}>
-                            {this.state.metros.map(metro => <a href className={style.singleRegionCityDiv} onClick={this.handleSelection}>
-                                <div className={style.metroNameRender}>{metro}</div>
+                        <div id="12kjh32lkj3" className={style.regionCityList}>
+                            {this.state.metros.map((metro, i) => <a href className={style.singleRegionCityDiv} onClick={this.handleSelection}>
+                                <div title={i} id="kasdj887889" className={style.metroNameRender}>{metro}</div>
                                 <i className={"material-icons" + ' ' + style.arrowForwardLogo}>arrow_forward_ios</i>
                             </a>)}
                         </div>
                     </div>
                     <div className={style.rightMidLocationNav}>
-                        <div className={style.regionCityList}>
-                            {this.state.cities.map(city => <a href className={style.singleRegionCityDiv}>
+                        <div id="312kjldffk3" className={style.regionCityList}>
+                            {this.state.cities.map(city => <a href id="kasdj887889" className={style.singleRegionCityDiv}>
                                 <div className={style.cityNameRender}>{city.city}</div> <div className={style.cityNameQuantity}>{Math.floor(Math.random() * (1000 - 1))}</div>
                             </a>)}
                         </div>

@@ -96,6 +96,7 @@ font-size: 14px;
 font-weight: 300;
 padding: 0 0 8px 0;
 text-transform: uppercase;
+color: #999;
 }
 
 .colend {
@@ -125,6 +126,7 @@ font-size: 16px;
 .headerSpan{
 display: inline-block;
 font-weight: 400;
+color: black;
 }
 
 
@@ -173,7 +175,7 @@ font-weight: 500;
 }
 
 .calendar .body .disabled {
-color: #f1f2f4;
+color: red;
 pointer-events: none;
 }
 
@@ -190,6 +192,7 @@ letter-spacing: -.07em;
 border: solid;
 border-width: thin;
 border-color: red;
+cursor: pointer;
 }
 
 .flexmiddle{

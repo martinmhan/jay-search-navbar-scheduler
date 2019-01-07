@@ -23,14 +23,9 @@
     margin-right: 30px;
     font-size: 30px;
 }
-/* .searchHeader{
-    padding: 7px 0 7px 50px;
-    width: auto;
-    height: auto;
-    margin: 0 0 5px 0;
-    border: none;
-    background: red;
-} */
+.searchHeaderMessage{
+    display: flex;
+}
 .searchBottomComponents{
     display: flex;
     margin: auto;
@@ -38,7 +33,7 @@
 }
 .largeText{
     font-size: 48px;
-    text-align: center;
+    margin: auto;
     font-weight: 650;
     color: black;
 }
@@ -284,6 +279,7 @@
     padding-bottom: 5px; 
 }
 .hoverOnSearch:hover {
+    cursor: pointer;
     background-color: red;
 }
 .searchResultLogo{

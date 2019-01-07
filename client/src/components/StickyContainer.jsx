@@ -72,7 +72,7 @@ class StickyContainer extends React.Component {
         return (
             <div className={style.containerSticky}>
                 <div className={style.containerStickyComponentTop}>
-                    <div className={style.containerContent}>
+                    <div id="containerContentid" className={style.containerContent}>
                         <div id="restaurantdetails"></div>
                         <div id="photosmenu"></div>
                         <div id="restaurantreviews"></div>

@@ -62,6 +62,7 @@ class Search extends React.Component {
         this.setState({
             selectedDay: day
         })
+        // console.log('DAY DAY ', day, this.state.selectedDay)
     }
     handleSelect(e) {
         let value = e.target.value;
@@ -83,12 +84,10 @@ class Search extends React.Component {
                         </div>
                     </div>
                     <div className={style.searchCloseButtonContainer}>
-                        <i id="searchButton" onClick={this.state.handleClickTopBar} className={"material-icons" + ' ' + style.closeIcon}>close</i>
+                        <i id="searchClicked" onClick={this.state.handleClickTopBar} className={"material-icons" + ' ' + style.closeIcon}>close</i>
                     </div>
                     <div className={style.searchHeaderMessage}>
-                        <h3>
-                            <span className={style.largeText}>Find your table for any occasion</span>
-                        </h3>
+                        <div className={style.largeText}>Find your table for any occasion</div>
                     </div>
                     <div className={style.searchBottomComponents}>
                         <div className={style.pickerContainer}>
@@ -160,7 +159,7 @@ class Search extends React.Component {
                                     <div className={style.currentPartyCount}>{this.state.selectedPartyCount}</div>
                                     <i className={"material-icons" + ' ' + style.searchDropLogo}>keyboard_arrow_down</i>
                                 </div>
-                                <select>
+                                <select id="adlfk3k2399">
                                     <option className={style.pickerText} value="1 person">1 person</option>
                                     <option className={style.pickerText} value="2 person">2 person</option>
                                     <option className={style.pickerText} value="3 person">3 person</option>
@@ -191,7 +190,7 @@ class Search extends React.Component {
                             <div className={style.customSearchBar}>
                                 <i className={"material-icons" + ' ' + style.searchDropLogo}>search</i>
                             </div>
-                            <input className={style.searchInput} onChange={this.handleInput} placeHolder="Location, Restaurant, or Cuisine"></input>
+                            <input id="kadsfjwefiw99" className={style.searchInput} onChange={this.handleInput} placeholder="Location, Restaurant, or Cuisine"></input>
                         </div>
 
                         <div className={style.searchFindTableButtonContainer}>

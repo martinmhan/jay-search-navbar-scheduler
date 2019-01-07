@@ -7,8 +7,8 @@ class DatePickerSearch extends React.Component {
         super(props);
         this.state = {
             currentMonth: new Date(),
-            selectedDate: new Date(),
-            handleDaySelection: this.props.handleDaySelection
+            selectedDate: new Date()
+            // handleDaySelection: this.props.handleDaySelection
         };
         this.onDateClick = this.onDateClick.bind(this);
         this.nextMonth = this.nextMonth.bind(this);
@@ -70,7 +70,7 @@ class DatePickerSearch extends React.Component {
                 formattedDate = dateFns.format(day, dateFormat);
                 const cloneDay = day;
                 days.push(
-                    <div
+                    <div id="kasdj887889"
                         className={style.col + ' ' + style.cell
                             + ' ' + `style.${
                             !dateFns.isSameMonth(day, monthStart)
@@ -81,25 +81,27 @@ class DatePickerSearch extends React.Component {
                         onClick={() => this.onDateClick(dateFns.parse(cloneDay))
                         }
                     >
-                        <span className={style.number}>{formattedDate}</span>
-                        <span className={style.bg}>{formattedDate}</span>
+                        <span id="kasdj887889" className={style.number}>{formattedDate}</span>
+                        <span id="kasdj887889" className={style.bg}>{formattedDate}</span>
                     </div >
                 );
                 day = dateFns.addDays(day, 1);
             }
             rows.push(
-                <div className={style.row} key={day} >
+                <div className={style.row} key={day} id="kasdj887889">
                     {days}
                 </div>
             );
             days = [];
         }
-        return <div className={style.body}>{rows}</div>;
+        return <div id="kasdj887889" className={style.body}>{rows}</div>;
     }
 
     onDateClick(day) {
+        console.log('step1', day)
         let convertedDay = dateFns.format(day, 'ddd, M/D')
-        this.state.handleClickedOnDate(convertedDay);
+        console.log('step12', convertedDay)
+        this.props.handleDaySelection(convertedDay);
         this.setState({
             selectedDate: day
         });
@@ -119,7 +121,7 @@ class DatePickerSearch extends React.Component {
 
     render() {
         return (
-            <div className={style.calendar}>
+            <div id="kasdj887889" className={style.calendar}>
                 {this.renderHeader()}
                 {this.renderDays()}
                 {this.renderCells()}

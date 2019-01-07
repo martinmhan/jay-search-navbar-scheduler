@@ -24,7 +24,6 @@ const Cuisines = sequelize.define('cuisines', {
 sequelize.sync();
 
 
-// MYSQL query (for joining tables)
 const searchForCities = (metro, callback) => {
     connection.query(`SELECT * FROM cities WHERE metroId = (SELECT id FROM metros WHERE metro = '${metro}')`, function (err, result) {
         if (err) {
@@ -34,10 +33,8 @@ const searchForCities = (metro, callback) => {
             callback(null, result);
         }
     })
-    // connection.end();
 }
 
-// Sequelize query (to use promises)
 const queryCategories = (query, callback) => {
     let result = {};
     Cities.findAll({

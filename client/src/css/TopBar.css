@@ -1,6 +1,8 @@
 
 .topBar{
     height: 119px;
+    position: relative;
+    z-index: 9;
 }
 .topContainerS1{
     height: 30px;
@@ -67,6 +69,7 @@
 .mobileComponents:hover{
     flex: 1;
     background-color: #f7f7f7;
+    cursor: pointer;
 }
 #en{
     margin-left: 2px;
@@ -89,6 +92,7 @@
 }
 
 .enComponents:hover{
+    cursor: pointer;
     background-color: #f1f2f4;
     border-left: 3px solid transparent; 
     border-color: #237b98;
@@ -135,6 +139,7 @@
     font-weight: 500;
 }
 .smallLinks:hover{
+    cursor: pointer;
     color: #195d73;
 }
 .topContainerS2{
@@ -270,7 +275,7 @@
 }
 
 .topContainerS4{
-    height: 300px;
+    height: auto;
 }
 .appHeaderPhoto{
     height: 100%;
