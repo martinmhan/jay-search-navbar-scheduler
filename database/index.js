@@ -4,7 +4,7 @@ const mysqlConfig = require('./config.js');
 const connection = mysql.createConnection(mysqlConfig);
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('tableit', 'root', '', {
+const sequelize = new Sequelize('tableit', 'root', 'password', {
     host: 'localhost',
     dialect: 'mysql',
     pool: {

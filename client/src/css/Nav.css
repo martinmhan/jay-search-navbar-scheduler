@@ -65,7 +65,7 @@
     margin-top: 20px; 
     font-weight: 500;
     padding-left: 27px;
-    color: rgb(0, 0, 238);
+    color: rgb(96, 75, 239);
 } 
 .metroNameRender{
     justify-content: flex-start;
@@ -102,6 +102,17 @@
     border-left: 3px solid #237b98;
 }
 
+.selectedSingleRegionCity{
+    width: 315px;
+    height: 40px;
+    background: white;
+    display: flex;
+    cursor: pointer;
+    color: #237b98;
+    background: #eef4fb;
+    border-color: #237b98;
+    border-left: 3px solid #237b98;
+}
 .metroNameRender{
     justify-content: flex-start;
     text-align: left;

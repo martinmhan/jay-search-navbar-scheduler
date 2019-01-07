@@ -19,29 +19,29 @@ class TopBar extends React.Component {
         let searchClicked = this.props.searchClicked;
         let mobileClicked = this.props.mobile;
         let enClicked = this.props.en;
-        let handleClickTopBar = this.props.handleClickTopBar;
+        let handleClick = this.props.handleClick;
         return (
             <div className={style.topBar}>
                 <div className={style.topContainerS1}>
                     {enClicked ? <EnDrop /> : <div></div>}
                     {mobileClicked ? <MobileDrop /> : <div></div>}
-                    {searchClicked ? (<Search handleClickTopBar={this.props.handleClickTopBar} />) : (<div></div>)}
+                    {searchClicked ? (<Search handleClick={this.props.handleClick} />) : (<div></div>)}
 
                     <div className={style.topContainerS1Right}>
                         <div className={style.topContainerS1RightS1}>
                             <a href className={style.smallLinksTop}>For Restauranteurs</a>
                         </div>
                         <div className={style.topContainerS1RightS2}>
-                            <a href id="mobile" onClick={handleClickTopBar} className={style.smallLinksTop}>Mobile</a>
-                            <i id="mobile" onClick={handleClickTopBar} className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
+                            <a href id="mobile" onClick={handleClick} className={style.smallLinksTop}>Mobile</a>
+                            <i id="mobile" onClick={handleClick} className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
                         </div>
                         <div className={style.topContainerS1RightS3}>
                             <a href className={style.smallLinksTop}>Help</a>
                         </div>
                         <div className={style.topContainerS1RightS4}>
                             <i className={"material-icons" + ' ' + style.topBarLogos}>language</i>
-                            <a href id="en" onClick={handleClickTopBar} className={style.smallLinksTop}>EN</a>
-                            <i id="en" onClick={handleClickTopBar} className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
+                            <a href id="en" onClick={handleClick} className={style.smallLinksTop}>EN</a>
+                            <i id="en" onClick={handleClick} className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ class TopBar extends React.Component {
                         <img className={style.openTableLogo} src={"https://s3-us-west-1.amazonaws.com/gitbuckets/hrla26-fec-tableit/tableit_logo.png"} />
                         <div className={style.openTableLogoText}>TableIt®</div>
                     </div>
-                    <button className={style.topContainerS2S2} id="locationNav" onClick={handleClickTopBar}>
+                    <button className={style.topContainerS2S2} id="locationNav" onClick={handleClick}>
                         <div id="locationNav" className={style.locationNav}>
                             <i id="locationNav" className={"material-icons" + ' ' + style.location_onNavHeaderIcon}>location_on</i>
                             <div id="locationNav" className={style.locationNavHeader + ' ' + style.smallLinks}>Los Angeles</div>
@@ -66,7 +66,7 @@ class TopBar extends React.Component {
                         <div className={style.S2S3buttonContainer}>
                             <button className={style.signUpButton}>Sign Up</button>
                             <a href className={style.signInButton}>Sign In</a>
-                            <i id="searchClicked" onClick={handleClickTopBar} className={"material-icons" + ' ' + style.locationNavHeaderIcon + ' ' + style.searchHeaderIcon}>search</i>
+                            <i id="searchClicked" onClick={handleClick} className={"material-icons" + ' ' + style.locationNavHeaderIcon + ' ' + style.searchHeaderIcon}>search</i>
                         </div>
                     </div>
                 </div>

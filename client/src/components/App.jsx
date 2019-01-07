@@ -11,15 +11,16 @@ class App extends React.Component {
             locationNav: false,
             searchClicked: false,
             mobile: false,
-            en: false
+            en: false,
+            reservationCal: false
         }
         this.handleCloseAll = this.handleCloseAll.bind(this);
-        this.handleClickTopBar = this.handleClickTopBar.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
     componentDidMount() {
     }
 
-    handleClickTopBar(e) {
+    handleClick(e) {
         let name = e.target.id;
         this.setState({
             [name]: !(this.state[name])
@@ -28,21 +29,21 @@ class App extends React.Component {
     handleCloseAll(e) {
         let name = e.target.id;
         if (name === "") {
-            console.log(name, "nameee")
             this.setState({
                 locationNav: false,
                 searchClicked: false,
                 mobile: false,
-                en: false
+                en: false,
+                reservationCal: false
             })
         }
     }
     render() {
         return (
             <div className={style.appContainer} onClick={this.handleCloseAll}>
-                <TopBar handleClickTopBar={this.handleClickTopBar} locationNav={this.state.locationNav} searchClicked={this.state.searchClicked} mobile={this.state.mobile} en={this.state.en} />
+                <TopBar handleClick={this.handleClick} locationNav={this.state.locationNav} searchClicked={this.state.searchClicked} mobile={this.state.mobile} en={this.state.en} />
                 <TopPhoto />
-                <StickyContainer />
+                <StickyContainer handleClick={this.handleClick} reservationCal = {this.state.reservationCal}/>
             </div>
         )
     }

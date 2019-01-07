@@ -15,7 +15,7 @@ class StickyContainer extends React.Component {
             restaurantspecials: false,
             restaurantreviews: false,
             twitter: false,
-            reservationCal: false,
+            // reservationCal: false,
             clickedOnDate: "Tue, 2/19",
             selectedPartyCount: "For 0",
             selectedTime: "12:00 PM"
@@ -23,7 +23,7 @@ class StickyContainer extends React.Component {
         this.handleClickedOnDate = this.handleClickedOnDate.bind(this);
         this.handleSetActive = this.handleSetActive.bind(this);
         this.handleSetInactive = this.handleSetInactive.bind(this);
-        this.reservationButtonHandler = this.reservationButtonHandler.bind(this);
+        // this.reservationButtonHandler = this.reservationButtonHandler.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
     }
     componentDidMount() {
@@ -55,11 +55,11 @@ class StickyContainer extends React.Component {
             clickedOnDate: date
         })
     }
-    reservationButtonHandler() {
-        this.setState({
-            reservationCal: !this.state.reservationCal
-        })
-    }
+    // reservationButtonHandler() {
+    //     this.setState({
+    //         reservationCal: !this.state.reservationCal
+    //     })
+    // }
     handleSelect(e) {
         let value = e.target.value;
         let name = e.target.id;
@@ -108,7 +108,7 @@ class StickyContainer extends React.Component {
                     <div className={style.appReservationContainer}>
                         <div className={style.appReservation}>
                             <div className={style.reservationCal}>
-                                {this.state.reservationCal === true ? <DatePickerReservation handleClickedOnDate={this.handleClickedOnDate} /> : <div></div>}
+                                {this.props.reservationCal === true ? <DatePickerReservation handleClickedOnDate={this.handleClickedOnDate} /> : <div></div>}
                             </div>
                             <div className={style.appReservationTop}>
                                 <h3 className={style.appReservationHeaderTop}>Make Reservation</h3>
@@ -152,8 +152,8 @@ class StickyContainer extends React.Component {
                             <div className={style.appReservationTimeAndDate}>
                                 <div className={style.appReservationDate}>
                                     <h4 className={style.appReservationHeader}>Date</h4>
-                                    <div className={style.reservationDatePickerInput} onClick={this.reservationButtonHandler}>
-                                        <a href className={style.appDatePickerButton}>{this.state.clickedOnDate}</a>
+                                    <div id="reservationCal" className={style.reservationDatePickerInput} onClick={this.props.handleClick}>
+                                        <a id="reservationCal" href className={style.appDatePickerButton}>{this.state.clickedOnDate}</a>
                                         <i className={"material-icons" + ' ' + style.arrowDownLogo}>keyboard_arrow_down</i>
                                     </div>
                                 </div>

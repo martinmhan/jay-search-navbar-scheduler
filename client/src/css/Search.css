@@ -52,11 +52,15 @@
     display: flex;
     flex-direction: column;
 }
+.datepickerSearch{
+    position: relative;
+    border-radius: 4px;
+}
 .datepickerSearchContainer{
     position: absolute;
     z-index: 6;
-    top: 216px;
-    left: 33px;
+    top: 47px;
+    left: -109px;
     border-radius: 4px;
 }
 .datePicker{

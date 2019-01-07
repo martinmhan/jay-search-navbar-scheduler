@@ -144,6 +144,7 @@
     background-color: white;
     position: relative;
 }
+
 .appReservationHeader{
     margin: auto;
     font-size: 13px;
@@ -191,6 +192,10 @@
     left: 0;
     z-index: 5;
     margin-top: 5px;
+}
+
+.partyCounter select:hover{
+    cursor: pointer; 
 }
 .partyCounter{
     margin: auto;
@@ -264,6 +269,9 @@
     left: 0;
     z-index: 5;
 }
+.timePicker select:hover {
+    cursor: pointer;
+}
 .pickerText{
     font-size: 1rem;
 }
@@ -282,6 +290,9 @@
     padding-top: 7px;
     flex: 4;
 }
+.appDatePickerButton:hover{
+    cursor: pointer;
+}
 .appReservationButtonContainer{
     flex-grow: 2px;
     height: 60px;
@@ -289,6 +300,11 @@
     flex-basis: 100%;
     display: flex;
     background-color: white;
+}
+.appReservationButton:focus {outline:0;}
+
+.appReservationButton:hover{
+    cursor: pointer;
 }
 .appReservationButton{
     margin: auto;

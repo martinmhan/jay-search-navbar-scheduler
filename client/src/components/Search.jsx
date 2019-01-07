@@ -19,7 +19,7 @@ class Search extends React.Component {
             selectedTime: "6:00 AM",
             selectedPartyCount: "1 Person",
             datePickerSearch: false,
-            handleClickTopBar: this.props.handleClickTopBar
+            handleClick: this.props.handleClick
 
         }
         this.handleSelect = this.handleSelect.bind(this);
@@ -62,7 +62,6 @@ class Search extends React.Component {
         this.setState({
             selectedDay: day
         })
-        // console.log('DAY DAY ', day, this.state.selectedDay)
     }
     handleSelect(e) {
         let value = e.target.value;
@@ -77,14 +76,13 @@ class Search extends React.Component {
         return (
             <div>
                 <div className={style.searchContainer}>
-                    <div className={style.datepickerWrapper}>
-                        {/* {this.state.text.length > 1 ? <SearchResults text={this.state.text} cityMatch={this.state.cityMatch} cuisineMatch={this.state.cuisineMatch} restaurantMatch={this.state.restaurantMatch} /> : <div></div>} */}
+                    {/* <div className={style.datepickerWrapper}>
                         <div className={style.datepickerSearchContainer}>
                             {datePickerSearch ? <DatePickerSearch handleClickSearch={this.handleClickSearch} handleDaySelection={this.handleDaySelection} /> : <div></div>}
                         </div>
-                    </div>
+                    </div> */}
                     <div className={style.searchCloseButtonContainer}>
-                        <i id="searchClicked" onClick={this.state.handleClickTopBar} className={"material-icons" + ' ' + style.closeIcon}>close</i>
+                        <i id="searchClicked" onClick={this.state.handleClick} className={"material-icons" + ' ' + style.closeIcon}>close</i>
                     </div>
                     <div className={style.searchHeaderMessage}>
                         <div className={style.largeText}>Find your table for any occasion</div>
@@ -92,6 +90,11 @@ class Search extends React.Component {
                     <div className={style.searchBottomComponents}>
                         <div className={style.pickerContainer}>
                             <div className={style.datePicker} id="datePickerSearch" onClick={this.handleClickSearch}>
+                                <div className={style.datepickerWrapper}>
+                                    <div className={style.datepickerSearchContainer}>
+                                        {datePickerSearch ? <DatePickerSearch handleClickSearch={this.handleClickSearch} handleDaySelection={this.handleDaySelection} /> : <div></div>}
+                                    </div> 
+                                </div> 
                                 <i id="datePickerSearch" onClick={this.handleClickSearch} className={"material-icons" + ' ' + style.searchDropLogo}>calendar_today</i>
                                 <div id="datePickerSearch" onClick={this.handleClickSearch} className={style.datePickerInput}>{this.state.selectedDay}</div>
                                 <i id="datePickerSearch" onClick={this.handleClickSearch} className={"material-icons" + ' ' + style.searchDropLogo}>keyboard_arrow_down</i>
@@ -159,7 +162,7 @@ class Search extends React.Component {
                                     <div className={style.currentPartyCount}>{this.state.selectedPartyCount}</div>
                                     <i className={"material-icons" + ' ' + style.searchDropLogo}>keyboard_arrow_down</i>
                                 </div>
-                                <select id="adlfk3k2399">
+                                <select id="selectedPartyCount" onChange={this.handleSelect}>
                                     <option className={style.pickerText} value="1 person">1 person</option>
                                     <option className={style.pickerText} value="2 person">2 person</option>
                                     <option className={style.pickerText} value="3 person">3 person</option>

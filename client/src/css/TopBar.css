@@ -31,12 +31,25 @@
     margin: auto;
     max-width: 116px;
 }
+.topContainerS1RightS1:hover{
+    cursor: pointer;
+}
+.topContainerS1RightS2:hover{
+    cursor: pointer;
+}
+.topContainerS1RightS3:hover{
+    cursor: pointer;
+}
+.topContainerS1RightS4:hover{
+    cursor: pointer;
+}
 .topContainerS1RightS2{
     flex: auto;
     margin: auto;
     display: flex; 
     max-width: 70px;
 }
+
 .mobileContainer{
     position: absolute;
     top: 30px;
@@ -56,6 +69,9 @@
     font-size: 19px;
     color:#a8a8a8;
     font-weight: 100;
+}
+.topBarLogos:hover{
+    cursor: pointer,
 }
 /* inside mobile component not in topbar */
 .mobileComponents{ 
@@ -132,6 +148,9 @@
     align-content: center;
     font-weight: 500;
 }
+.smallLinksTop:hover{
+    cursor: pointer,
+}
 
 .smallText{
     color: black;
@@ -141,6 +160,10 @@
 .smallLinks:hover{
     cursor: pointer;
     color: #195d73;
+
+}
+.smallText:hover{
+    cursor: pointer;
 }
 .topContainerS2{
     height: 57px;
@@ -227,12 +250,18 @@
     color: #fff;
     border-radius: 4px;
 }
+.signUpButton:hover {
+    cursor: pointer;
+}
 .signInButton{
     margin: auto;
     padding: 0 1rem;
     font-size: 15px;
     color: #333;
     background-color: white;
+}
+.signInButton:hover{
+    cursor: pointer;
 }
 .searchHeaderIcon{
     margin: auto;
