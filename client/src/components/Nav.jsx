@@ -56,7 +56,7 @@ class Nav extends React.Component {
                 <div className={style.midLocationNav}>
                     <div className={style.leftMidLocationNav}>
                         <div id="12kjh32lkj3" className={style.regionCityList}>
-                            {this.state.metros.map((metro, i) => <a href id="kasdj887889"  className={metro === this.state.currentMetro ? (style.selectedSingleRegionCity) : (style.singleRegionCityDiv)} onClick={this.handleSelection}>
+                            {this.state.metros.map((metro, i) => <a id="kasdj887889"  className={metro === this.state.currentMetro ? (style.selectedSingleRegionCity) : (style.singleRegionCityDiv)} onClick={this.handleSelection}>
                            
                                 <div title={i} id="kasdj887889" className={style.metroNameRender}>{metro}</div>
                                 <i className={"material-icons" + ' ' + style.arrowForwardLogo}>arrow_forward_ios</i>
@@ -65,7 +65,7 @@ class Nav extends React.Component {
                     </div>
                     <div className={style.rightMidLocationNav}>
                         <div id="312kjldffk3" className={style.regionCityList}>
-                            {this.state.cities.map((city, index) => <a href id="kasdj887889" className={index === this.state.currentCity ? (style.selectedSingleCity) : (style.singleRegionCityDiv)}>
+                            {this.state.cities.map((city, index) => <a id="kasdj887889" className={index === this.state.currentCity ? (style.selectedSingleCity) : (style.singleRegionCityDiv)}>
                                 <div className={style.cityNameRender}>{city.city}</div> <div className={style.cityNameQuantity}>{Math.floor(Math.random() * (1000 - 1))}</div>
                             </a>)}
                         </div>

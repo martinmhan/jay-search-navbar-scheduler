@@ -8,7 +8,6 @@ class DatePickerSearch extends React.Component {
         this.state = {
             currentMonth: new Date(),
             selectedDate: new Date()
-            // handleDaySelection: this.props.handleDaySelection
         };
         this.onDateClick = this.onDateClick.bind(this);
         this.nextMonth = this.nextMonth.bind(this);

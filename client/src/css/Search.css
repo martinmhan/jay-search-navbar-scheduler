@@ -237,12 +237,25 @@
     border-color: #d8d9db;
 }
 .searchHeader{
-    padding: 7px 0 7px 50px;
+    padding: 7px 0 7px 34px;
     width: auto;
     height: auto;
     margin: 0 0 5px 0;
     border: none;
     background-color: white;
+    display: flex;
+}
+.textForSearchHeader{
+    flex: 1;
+    justify-content: flex-start;
+    color: #999;
+    font-weight: 400;
+}
+
+.searchHeaderText{
+    flex: 1;
+    justify-content: flex-start;
+    padding-right: 142px;
 }
 .searchHeader:hover{
     cursor: pointer;
@@ -281,7 +294,7 @@
 .searchResultText{
     font-size: 16px;
     font-weight: 500;
-    padding-left: 30px;
+    padding-left: 35px;
 }
 .cuisineResults{
     flex: 1;

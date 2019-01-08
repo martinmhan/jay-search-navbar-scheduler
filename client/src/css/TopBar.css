@@ -257,6 +257,9 @@
     color: #fff;
     border-radius: 4px;
 }
+.signUpButton:focus {
+    outline: none;
+  }
 .signUpButton:hover {
     cursor: pointer;
 }

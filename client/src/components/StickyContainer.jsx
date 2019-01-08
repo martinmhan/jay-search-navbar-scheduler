@@ -49,6 +49,7 @@ class StickyContainer extends React.Component {
         })
     }
     handleClickedOnDate(date) {
+        console.log(date, 'date')
         this.setState({
             clickedOnDate: date
         })
@@ -87,10 +88,6 @@ class StickyContainer extends React.Component {
                                     <Link activeClass="active" to="restaurantmenu" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
                                         onSetInactive={this.handleSetInactive} className={this.state.restaurantmenu === true ? style.active : ''}>Menu</Link>
                                 </li>
-                                {/* <li id="restaurantspecials" className={style.appMovingNavBarListHeader}>
-                                    <Link activeClass="active" to="restaurantspecials" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
-                                        onSetInactive={this.handleSetInactive} className={this.state.restaurantspecials === true ? style.active : ''}>Specials</Link>
-                                </li> */}
                                 <li id="restaurantreviews" className={style.appMovingNavBarListHeader}>
                                     <Link activeClass="active" to="restaurantreviews" spy={true} smooth={true} offset={50} duration={500} onSetActive={this.handleSetActive}
                                         onSetInactive={this.handleSetInactive} className={this.state.restaurantreviews === true ? style.active : ''}>Reviews</Link>
@@ -108,7 +105,7 @@ class StickyContainer extends React.Component {
                             </div>
                             <div className={style.appReservationPartySize}>
 
-                                <div class={style.customPartyCounter}>
+                                <div className={style.customPartyCounter}>
                                     <div className={style.appReservationHeader + ' ' + style.partySizeHeader}>Party Size</div>
                                     <div className={style.partyCounterInput}>
                                         <div className={style.currentPartyCounter}>{this.state.selectedPartyCount}</div>
@@ -146,13 +143,13 @@ class StickyContainer extends React.Component {
                                 <div className={style.appReservationDate}>
                                     <h4 className={style.appReservationHeader}>Date</h4>
                                     <div id="reservationCal" className={style.reservationDatePickerInput} onClick={this.props.handleClick}>
-                                        <a id="reservationCal" href className={style.appDatePickerButton}>{this.state.clickedOnDate}</a>
+                                        <a id="reservationCal" className={style.appDatePickerButton}>{this.state.clickedOnDate}</a>
                                         <i className={"material-icons" + ' ' + style.arrowDownLogo}>keyboard_arrow_down</i>
                                     </div>
                                 </div>
 
                                 <div className={style.timePicker}>
-                                    <div class={style.customSelectTime}>
+                                    <div className={style.customSelectTime}>
                                         <div className={style.appReservationHeader + ' ' + style.timePickerHeader}>Time</div>
                                         <div className={style.timePickerInput}>
                                             <div className={style.currentSelectTime}>{this.state.selectedTime}</div>

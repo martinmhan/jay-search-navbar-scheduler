@@ -65,36 +65,6 @@ class App extends React.Component {
             })
         }
     }
-    // handleCloseAll(e) {
-    //     let name = e.target.id;
-    //     if (name === ""){
-    //         if (this.state.current !== locationNav){
-    //             this.setState({
-    //                 locationNav: false
-    //             })
-    //         }
-    //         if (this.state.current !== searchClicked){
-    //             this.setState({
-    //                 searchClicked: false
-    //             })
-    //         } 
-    //         if (this.state.current !== mobile) {
-    //             this.setState({
-    //                 mobile: false
-    //             })
-    //         }
-    //         if (this.state.current !== en){
-    //             this.setState({
-    //                 en: false
-    //             })
-    //         }
-    //         if (this.state.current !== reservationCal) {
-    //             this.setState({
-    //                 reservationCal: false
-    //             })
-    //         }
-    //     }
-    // }
     render() {
         return (
             <div className={style.appContainer} onClick={this.handleCloseAll}>

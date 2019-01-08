@@ -10,8 +10,6 @@ class TopBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // text: '',
-            // cities: []
         }
     }
     render() {
@@ -30,18 +28,18 @@ class TopBar extends React.Component {
 
                     <div className={style.topContainerS1Right}>
                         <div className={style.topContainerS1RightS1}>
-                            <a href className={style.smallLinksTop}>For Restauranteurs</a>
+                            <a  className={style.smallLinksTop}>For Restauranteurs</a>
                         </div>
                         <div className={style.topContainerS1RightS2}>
-                            <a href id="mobile" onClick={handleClick} className={style.smallLinksTop}>Mobile</a>
+                            <a  id="mobile" onClick={handleClick} className={style.smallLinksTop}>Mobile</a>
                             <i id="mobile" onClick={handleClick} className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
                         </div>
                         <div className={style.topContainerS1RightS3}>
-                            <a href className={style.smallLinksTop}>Help</a>
+                            <a  className={style.smallLinksTop}>Help</a>
                         </div>
                         <div className={style.topContainerS1RightS4}>
                             <i className={"material-icons" + ' ' + style.topBarLogos}>language</i>
-                            <a href id="en" onClick={handleClick} className={style.smallLinksTop}>EN</a>
+                            <a  id="en" onClick={handleClick} className={style.smallLinksTop}>EN</a>
                             <i id="en" onClick={handleClick} className={"material-icons" + ' ' + style.topBarLogos}>keyboard_arrow_down</i>
                         </div>
                     </div>
@@ -66,7 +64,7 @@ class TopBar extends React.Component {
                     <div className={style.topContainerS2S3}>
                         <div className={style.S2S3buttonContainer}>
                             <button className={style.signUpButton}>Sign Up</button>
-                            <a href className={style.signInButton}>Sign In</a>
+                            <a  className={style.signInButton}>Sign In</a>
                             <i id="searchClicked" onClick={handleClick} className={"material-icons" + ' ' + style.locationNavHeaderIcon + ' ' + style.searchHeaderIcon}>search</i>
                         </div>
                     </div>
@@ -75,16 +73,16 @@ class TopBar extends React.Component {
                 <div className={style.topContainerS3}>
                     <div className={style.topContainerS3SContainer}>
                         <div className={style.topContainerS3S1}>
-                            <a href className={style.smallLinks}>Home</a>
+                            <a  className={style.smallLinks}>Home</a>
                         </div>
                         <div className={style.topContainerS3S2}>
                             <div className={style.smallText}>United States</div>
                         </div>
                         <div className={style.topContainerS3S3}>
-                            <a href className={style.smallLinks}>Los Angeles</a>
+                            <a  className={style.smallLinks}>Los Angeles</a>
                         </div>
                         <div className={style.topContainerS3S4}>
-                            <a href className={style.smallLinks}>West Hollywood / Beverly Hills / Mid-Wilshire</a>
+                            <a  className={style.smallLinks}>West Hollywood / Beverly Hills / Mid-Wilshire</a>
                         </div>
                         <div className={style.topContainerS3S5}>
                             <div className={style.smallText}>West Hollywood</div>
