@@ -4,13 +4,13 @@ import style from '../css/TopBar.css'
 const En = (props) => {
     return (
         <div className={style.enContainer}>
-            <div className={style.enComponents}>Deutsch</div>
-            <div className={style.enComponents + ' ' + style.enComponentsSelected}>English</div>
-            <div className={style.enComponents}>Español</div>
-            <div className={style.enComponents}>Français</div>
-            <div className={style.enComponents}>Italiano</div>
-            <div className={style.enComponents}>Nederlands</div>
-            <div className={style.enComponents}>日本語</div>
+            <div className={style.enComponents}><div className={style.languageName}>Deutsch</div></div>
+            <div className={style.enComponents + ' ' + style.enComponentsSelected}><div className={style.languageName}>English</div></div>
+            <div className={style.enComponents}><div className={style.languageName}>Español</div></div>
+            <div className={style.enComponents}><div className={style.languageName}>Français</div></div>
+            <div className={style.enComponents}><div className={style.languageName}>Italiano</div></div>
+            <div className={style.enComponents}><div className={style.languageName}>Nederlands</div></div>
+            <div className={style.enComponents}><div className={style.languageName}>日本語</div></div>
         </div>
     )
 }

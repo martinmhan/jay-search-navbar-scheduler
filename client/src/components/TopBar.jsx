@@ -20,6 +20,7 @@ class TopBar extends React.Component {
         let mobileClicked = this.props.mobile;
         let enClicked = this.props.en;
         let handleClick = this.props.handleClick;
+        let closeAll = this.props.handleCloseAll;
         return (
             <div className={style.topBar}>
                 <div className={style.topContainerS1}>

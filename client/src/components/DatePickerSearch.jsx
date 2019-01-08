@@ -98,9 +98,9 @@ class DatePickerSearch extends React.Component {
     }
 
     onDateClick(day) {
-        console.log('step1', day)
+        // console.log('step1', day)
         let convertedDay = dateFns.format(day, 'ddd, M/D')
-        console.log('step12', convertedDay)
+        // console.log('step12', convertedDay)
         this.props.handleDaySelection(convertedDay);
         this.setState({
             selectedDate: day

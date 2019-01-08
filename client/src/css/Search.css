@@ -74,6 +74,7 @@
 .datePickerInput{
     flex: 3;
     margin: auto;
+    font-size: 15px;
     background-color: white;
 }
 .searchDropLogo{
@@ -81,6 +82,9 @@
     margin: auto;
     font: 10px;
     padding: 0 0 0 10px;
+}
+.searchDropLogo:hover{
+    cursor: pointer;
 }
 .timePicker{
     width: 160px;
@@ -108,6 +112,7 @@
 .currentSelectTime{
     flex: 2;
     margin: auto;
+    font-size: 15px;
 }
 .timePicker select {
     opacity: 0;
@@ -164,6 +169,7 @@
 .currentPartyCount{
     flex: 3;
     margin: auto;
+    font-size: 15px;
 }
 .searchBar{
     flex: 1;

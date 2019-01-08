@@ -60,6 +60,8 @@
     background-color: white;
     display: flex;
     flex-direction: column;
+    border-radius: 4px;
+    border: 1px solid #ebebeb;
 }
 /* outside mobilecomponets on topheader */
 .topBarLogos{
@@ -80,7 +82,6 @@
     color: #999;
     padding-left: 13px;
     padding-top: 11px;
-    background-color: white;
 }
 .mobileComponents:hover{
     flex: 1;
@@ -100,11 +101,17 @@
     width: 146px;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #ebebeb;
 }
 .enComponents{
     flex: 1;
-    background-color: white; 
     border: none;
+    display: flex;
+}
+.languageName{
+    padding: 11px 0px 0px 13px;
 }
 
 .enComponents:hover{
@@ -267,7 +274,9 @@
     margin: auto;
     color: black;
 }
-
+.searchHeaderIcon:hover{
+    cursor: pointer;
+}
 
 .topContainerS3{
     height: 25%;

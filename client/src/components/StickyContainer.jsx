@@ -15,7 +15,6 @@ class StickyContainer extends React.Component {
             restaurantspecials: false,
             restaurantreviews: false,
             twitter: false,
-            // reservationCal: false,
             clickedOnDate: "Tue, 2/19",
             selectedPartyCount: "For 0",
             selectedTime: "12:00 PM"
@@ -23,7 +22,6 @@ class StickyContainer extends React.Component {
         this.handleClickedOnDate = this.handleClickedOnDate.bind(this);
         this.handleSetActive = this.handleSetActive.bind(this);
         this.handleSetInactive = this.handleSetInactive.bind(this);
-        // this.reservationButtonHandler = this.reservationButtonHandler.bind(this);
         this.handleSelect = this.handleSelect.bind(this);
     }
     componentDidMount() {
@@ -69,6 +67,7 @@ class StickyContainer extends React.Component {
     }
 
     render() {
+        console.log('it reaches this point', this.props.reservationCal)
         return (
             <div className={style.containerSticky}>
                 <div className={style.containerStickyComponentTop}>
