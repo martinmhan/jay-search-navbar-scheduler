@@ -19,13 +19,14 @@ class Search extends React.Component {
             selectedTime: "6:00 AM",
             selectedPartyCount: "1 Person",
             datePickerSearch: false,
-            handleClick: this.props.handleClick
-
+            handleClick: this.props.handleClick,
+            handleHoverState: true
         }
         this.handleSelect = this.handleSelect.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleClickSearch = this.handleClickSearch.bind(this);
         this.handleDaySelection = this.handleDaySelection.bind(this);
+        this.handleHover = this.handleHover.bind(this);
     }
     handleInput(e) {
         this.setState({
@@ -68,6 +69,11 @@ class Search extends React.Component {
         let name = e.target.id;
         this.setState({
             [name]: value
+        })
+    }
+    handleHover() {
+        this.setState({
+            handleHoverState: false
         })
     }
     render() {
@@ -188,7 +194,7 @@ class Search extends React.Component {
                             </div>
                         </div>
                         <div className={style.searchBar}>
-                            {this.state.text.length > 1 ? <SearchResults text={this.state.text} cityMatch={this.state.cityMatch} cuisineMatch={this.state.cuisineMatch} restaurantMatch={this.state.restaurantMatch} /> : <div></div>}
+                            {this.state.text.length > 1 ? <SearchResults handleHoverState = {this.state.handleHoverState} handleHover = {this.handleHover} text={this.state.text} cityMatch={this.state.cityMatch} cuisineMatch={this.state.cuisineMatch} restaurantMatch={this.state.restaurantMatch} /> : <div></div>}
 
                             <div className={style.customSearchBar}>
                                 <i className={"material-icons" + ' ' + style.searchDropLogo}>search</i>

@@ -53,11 +53,6 @@ class StickyContainer extends React.Component {
             clickedOnDate: date
         })
     }
-    // reservationButtonHandler() {
-    //     this.setState({
-    //         reservationCal: !this.state.reservationCal
-    //     })
-    // }
     handleSelect(e) {
         let value = e.target.value;
         let name = e.target.id;
@@ -67,7 +62,6 @@ class StickyContainer extends React.Component {
     }
 
     render() {
-        console.log('it reaches this point', this.props.reservationCal)
         return (
             <div className={style.containerSticky}>
                 <div className={style.containerStickyComponentTop}>
