@@ -7,7 +7,8 @@ class DatePickerSearch extends React.Component {
         super(props);
         this.state = {
             currentMonth: new Date(),
-            selectedDate: new Date()
+            selectedDate: new Date(),
+            currDate: "2019-01-02T08:00:00.000Z"
         };
         this.onDateClick = this.onDateClick.bind(this);
         this.nextMonth = this.nextMonth.bind(this);
@@ -67,42 +68,39 @@ class DatePickerSearch extends React.Component {
         while (rows.length <= 5) {
             for (let i = 0; i < 7; i++) {
                 formattedDate = dateFns.format(day, dateFormat);
-                const cloneDay = day;
+                const currDay = day;
+                console.log(JSON.stringify(currDay) === this.state.currDate)
                 days.push(
-                    <div id="kasdj887889"
-                        className={style.col + ' ' + style.cell
-                            + ' ' + `style.${
-                            !dateFns.isSameMonth(day, monthStart)
-                                ? "disabled"
-                                : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
-                            }`}
+                    <div id ="h234h2k34l"
+                        className={(!dateFns.isSameMonth(currDay, monthStart) ? (style.col + ' ' + style.cell + ' ' + style.disabled) : 
+                        JSON.stringify(currDay) === this.state.currDate ? (style.col + ' ' + style.cell + ' ' + style.dateSelected) : (style.col + ' ' + style.cell))}
                         key={day}
-                        onClick={() => this.onDateClick(dateFns.parse(cloneDay))
+                        onClick={() => this.onDateClick(dateFns.parse(currDay))
                         }
                     >
-                        <span id="kasdj887889" className={style.number}>{formattedDate}</span>
-                        <span id="kasdj887889" className={style.bg}>{formattedDate}</span>
+                        <span id ="h234h2k34l" className={style.number}>{formattedDate}</span>
+                        <span id ="h234h2k34l" className={style.bg}>{formattedDate}</span>
                     </div >
                 );
                 day = dateFns.addDays(day, 1);
             }
             rows.push(
-                <div className={style.row} key={day} id="kasdj887889">
+                <div className={style.row} key={day} >
                     {days}
                 </div>
             );
             days = [];
         }
-        return <div id="kasdj887889" className={style.body}>{rows}</div>;
+        return <div className={style.body}>{rows}</div>;
     }
 
     onDateClick(day) {
-        // console.log('step1', day)
-        let convertedDay = dateFns.format(day, 'ddd, M/D')
-        // console.log('step12', convertedDay)
+        console.log('step1', day)
+        let convertedDay = dateFns.format(day, 'ddd, M/D');
+        let stringifiedDate = JSON.stringify(day);
         this.props.handleDaySelection(convertedDay);
         this.setState({
-            selectedDate: day
+            currDate: stringifiedDate
         });
     };
 

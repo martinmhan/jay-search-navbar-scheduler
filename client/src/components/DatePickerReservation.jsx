@@ -68,17 +68,15 @@ class DatePickerReservation extends React.Component {
         while (rows.length <= 5) {
             for (let i = 0; i < 7; i++) {
                 formattedDate = dateFns.format(day, dateFormat);
-                const cloneDay = day;
+                const currDay = day;
+                // console.log(this.state.selectedDate, 'selectedDate', typeof(this.state.selectedDate))
+                // console.log(currDay, 'currDay', typeof(currDay))
                 days.push(
                     <div
-                        className={style.col + ' ' + style.cell
-                            + ' ' + `style.${
-                            !dateFns.isSameMonth(day, monthStart)
-                                ? "disabled"
-                                : dateFns.isSameDay(day, selectedDate) ? "selected" : ""
-                            }`}
+                        className={(!dateFns.isSameMonth(currDay, monthStart) ? (style.col + ' ' + style.cell + ' ' + style.disabled) : 
+                        JSON.stringify(currDay) === JSON.stringify(this.state.selectedDate) ? (style.col + ' ' + style.cell + ' ' + style.dateSelected) : (style.col + ' ' + style.cell))}
                         key={day}
-                        onClick={() => this.onDateClick(dateFns.parse(cloneDay))
+                        onClick={() => this.onDateClick(dateFns.parse(currDay))
                         }
                     >
                         <span className={style.number}>{formattedDate}</span>

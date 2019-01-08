@@ -30,7 +30,8 @@ class Nav extends React.Component {
 
     getCities() {
         let metro = this.state.currentMetro;
-        axios.get(`http://18.188.173.143:9004/api/nav/${metro}`)
+        let regexMetro = metro.replace(/ /g, '_');
+        axios.get(`http://18.188.173.143:9004/api/nav/${regexMetro}`)
             .then(data => {
                 let result = data.data;
                 this.setState({
@@ -57,8 +58,7 @@ class Nav extends React.Component {
                     <div className={style.leftMidLocationNav}>
                         <div id="12kjh32lkj3" className={style.regionCityList}>
                             {this.state.metros.map((metro, i) => <a id="kasdj887889"  className={metro === this.state.currentMetro ? (style.selectedSingleRegionCity) : (style.singleRegionCityDiv)} onClick={this.handleSelection}>
-                           
-                                <div title={i} id="kasdj887889" className={style.metroNameRender}>{metro}</div>
+                                <div title={i} id="kasdj887889" className={style.metroNameRender}>{metro.replace(/_/g, " ")}</div>
                                 <i className={"material-icons" + ' ' + style.arrowForwardLogo}>arrow_forward_ios</i>
                             </a>)}
                         </div>

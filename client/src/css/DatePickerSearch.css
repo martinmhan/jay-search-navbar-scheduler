@@ -107,7 +107,7 @@ text-align: right;
 .calendar {
 display: block;
 position: relative;
-width: 331px;
+width: 351px;
 height: 291px;
 background-color: white;
 border: 1px solid #d8d9db;
@@ -160,10 +160,8 @@ width: 2rem;
 display: flex;
 background-color: white;
 }
-.calendar .body .selected {
-border: solid;
-border-width: thin;
-border-color: red;
+.dateSelected {
+border: 1px solid red !important;
 }
 
 
@@ -174,8 +172,8 @@ margin: auto;
 font-weight: 500;
 }
 
-.calendar .body .disabled {
-color: red;
+.disabled {
+color: #f1f2f4;
 pointer-events: none;
 }
 
