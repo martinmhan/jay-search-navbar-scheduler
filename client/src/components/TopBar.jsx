@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import Search from './Search.jsx';
 import Nav from './Nav.jsx';
 import style from '../css/TopBar.css';
