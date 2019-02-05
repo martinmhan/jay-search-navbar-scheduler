@@ -1,13 +1,12 @@
 const express = require('express');
-const router = express.Router();
 const { getCities, getSearchResults } = require('./controller.js');
 
+const router = express.Router();
+
 router.route('/nav/:metro')
-    .get(getCities)
+	.get(getCities);
 
 router.route('/search/:searched')
-    .get(getSearchResults)
-
-
+	.get(getSearchResults);
 
 module.exports = router;

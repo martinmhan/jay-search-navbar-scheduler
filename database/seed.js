@@ -26,142 +26,102 @@ let restaurantNames = ['TKB Bakery & Deli', 'Little Miss BBQ', 'Katsuya', 'Burge
 // let reservations = ['8', '9', '10', '11', '12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
 
 const mapSingleItem = (arr) => {
-    return arr.map(el => {
-        return [el];
-    })
-}
+	return arr.map(el => {
+		return [el];
+	});
+};
 
 const mapCities = (arr, mId) => {
-    return arr.map(location => {
-        return [location, mId]
-    })
-}
-
-// const mapReservations = (arr, dId) => {
-//     return arr.map(el => {
-//         const row = {
-//             reservationTime: el, dateId: dId, currentStatus: 'F', partyCount: 0
-//         };
-//         return row
-//     })
-// }
+	return arr.map(location => {
+		return [location, mId];
+	});
+};
 
 // Metro populating
-
 let metroArr = mapSingleItem(metroList);
 connection.query("INSERT INTO metros (metro) VALUES ?", [metroArr], function (err, result) {
-    if (err) { console.log('err', err) };
-    console.log('result', result);
+	if (err) { console.error(err); }
 });
 
 // Cities populating
-
 let laArr = mapCities(laCities, 8);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [laArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 
 let atlArr = mapCities(atlCities, 1);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [atlArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 
 let bosArr = mapCities(bosCities, 2);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [bosArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 
 let chiArr = mapCities(chiCities, 3);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [chiArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 
 let dalArr = mapCities(dalCities, 4);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [dalArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 
 let denArr = mapCities(denCities, 5);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [denArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 
 let houArr = mapCities(houCities, 6);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [houArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 
 let lvArr = mapCities(lvCities, 7);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [lvArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 let miaArr = mapCities(miaCities, 9);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [miaArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 let neworlArr = mapCities(neworlCities, 10);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [neworlArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 let nyArr = mapCities(nyCities, 11);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [nyArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 let ocArr = mapCities(ocCities, 12);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [ocArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 let sfArr = mapCities(sfCities, 13);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [sfArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 let sdArr = mapCities(sdCities, 14);
 connection.query("INSERT INTO cities (city, metroId) VALUES ?", [sdArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 let seaArr = mapCities(seaCities, 15);
-connection.query("INSERT INTO cities (city, metroId) VALUES ?", [chiArr], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+connection.query("INSERT INTO cities (city, metroId) VALUES ?", [seaArr], function (err, result) {
+	if (err) { console.error(err); }
 });
 
-
-// Populating Restaurants 
-
+// Populating Restaurants
 let restaurantList = mapSingleItem(restaurantNames);
 connection.query("INSERT INTO restaurants (restaurantName) VALUES ?", [restaurantList], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
 
 // Populating Cuisines
-
 let cuisinesList = mapSingleItem(cuisines);
 connection.query("INSERT INTO cuisines (cuisineName) VALUES ?", [cuisinesList], function (err, result) {
-    if (err) { console.log('err', err) }
-    console.log(result);
+	if (err) { console.error(err); }
 });
-
-// // Populating Reservations
-//     let metro = mapSingleItem(cities);
-//     connection.query("INSERT INTO reservations (reservationTime, dateId, currentStatus, partyCount) VALUES ?", [city], function (err, result) {
-//     //         if (err) throw err;
-//     //         console.log(result);
-//     });
-
 
 connection.end();
