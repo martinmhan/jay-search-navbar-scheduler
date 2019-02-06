@@ -23,7 +23,7 @@ const { connection } = require('./index.js');
 // sequelize.sync();
 
 const searchForCities = (metro, callback) => {
-	connection.query(`SELECT * FROM cities WHERE metroId = (SELECT id FROM metros WHERE metro = '${metro}')`, function (err, result) {
+	connection.query(`SELECT * FROM cities WHERE metroId = (SELECT id FROM metros WHERE metro = '${metro}')`, (err, result) => {
 		if (err) { callback(err); }
 		else { callback(null, result); }
 	});
@@ -31,19 +31,15 @@ const searchForCities = (metro, callback) => {
 
 const queryCategories = (query, callback) => {
 	// let result = {};
-	connection.query(`SELECT * FROM cities WHERE city LIKE '%${query}%';`, (err, cityData) => {
+	connection.query(`SELECT * FROM cities WHERE city LIKE '%${query}%';`, (err, cities) => {
 		if (err) { callback(err); }
 		else {
-			connection.query(`SELECT * FROM cuisines WHERE cuisineName LIKE '%${query}%';`, (err, cuisineData) => {
+			connection.query(`SELECT * FROM cuisines WHERE cuisineName LIKE '%${query}%';`, (err, cuisines) => {
 				if (err) { callback(err); }
 				else {
-					connection.query(`SELECT * FROM restaurants WHERE restaurantName like '%${query}%';`, (err, { restaurantData }) => {
+					connection.query(`SELECT * FROM restaurants WHERE restaurantName like '%${query}%';`, (err, { restaurants }) => {
 						if (err) { callback(err); }
-						else { callback(null, {
-							cities: cityData.cities,
-							cuisines: cuisineData.cuisines,
-							restaurants: restaurantData.restaurants
-						}); }
+						else { callback(null, { cities, cuisines, restaurants }); }
 					});
 				}
 			});
