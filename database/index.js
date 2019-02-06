@@ -6,6 +6,7 @@ const connection = mysql.createConnection(mysqlConfig);
 
 const sequelize = new Sequelize('tableit', 'root', 'password', {
 	host: '3.84.195.96',
+	port: 3306,
 	dialect: 'mysql',
 	pool: {
 		max: 5,
