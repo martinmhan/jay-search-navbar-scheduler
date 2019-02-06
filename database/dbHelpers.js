@@ -3,9 +3,9 @@ const { connection } = require('./index.js');
 // const Sequelize = require('sequelize');
 // const Op = Sequelize.Op;
 
-connection.query('CREATE TABLE IF NOT EXISTS cities (city VARCHAR(255), address VARCHAR(255));');
-connection.query('CREATE TABLE IF NOT EXISTS restaurants (restaurantName VARCHAR(255));');
-connection.query('CREATE TABLE IF NOT EXISTS cuisines (cuisineName VARCHAR(255));');
+// connection.query('CREATE TABLE IF NOT EXISTS cities (city VARCHAR(255), address VARCHAR(255));');
+// connection.query('CREATE TABLE IF NOT EXISTS restaurants (restaurantName VARCHAR(255));');
+// connection.query('CREATE TABLE IF NOT EXISTS cuisines (cuisineName VARCHAR(255));');
 
 // const Cities = sequelize.define('cities', {
 // 	city: Sequelize.STRING,
@@ -31,15 +31,19 @@ const searchForCities = (metro, callback) => {
 
 const queryCategories = (query, callback) => {
 	// let result = {};
-	connection.query(`SELECT * FROM cities WHERE city LIKE '%${query}%';`, (err, { cities }) => {
+	connection.query(`SELECT * FROM cities WHERE city LIKE '%${query}%';`, (err, cityData) => {
 		if (err) { callback(err); }
 		else {
-			connection.query(`SELECT * FROM cuisines WHERE cuisineName LIKE '%${query}%';`, (err, { cuisines }) => {
+			connection.query(`SELECT * FROM cuisines WHERE cuisineName LIKE '%${query}%';`, (err, cuisineData) => {
 				if (err) { callback(err); }
 				else {
-					connection.query(`SELECT * FROM restaurants WHERE restaurantName like '%${query}%';`, (err, { restaurants }) => {
+					connection.query(`SELECT * FROM restaurants WHERE restaurantName like '%${query}%';`, (err, { restaurantData }) => {
 						if (err) { callback(err); }
-						else { callback(null, { cities, cuisines, restaurants }); }
+						else { callback(null, {
+							cities: cityData.cities,
+							cuisines: cuisineData.cuisines,
+							restaurants: restaurantData.restaurants
+						}); }
 					});
 				}
 			});
