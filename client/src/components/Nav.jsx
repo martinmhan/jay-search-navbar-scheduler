@@ -31,7 +31,7 @@ class Nav extends React.Component {
     getCities() {
         let metro = this.state.currentMetro;
         let regexMetro = metro.replace(/ /g, '_');
-        axios.get(`http://3.84.195.96:9000/api/nav/${regexMetro}`)
+        axios.get(`http://100.24.12.73:9000/api/nav/${regexMetro}`)
             .then(data => {
                 let result = data.data;
                 this.setState({
